@@ -1,0 +1,429 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COPYRIGHT: (C) 2012-2015 FAU FabLab and others
+% Bearbeitungen ab 2015-02-20 fallen unter CC-BY-SA 3.0
+% Sobald alle Mitautoren zugestimmt haben, steht die komplette Datei unter CC-BY-SA 3.0. Bis dahin ist der Lizenzstatus aller alten Bestandteile ungeklärt.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\basedir}{fablab-document}
+\documentclass{\basedir/fablab-document}
+
+\usepackage{amssymb} % Symbole für Knöpfe
+\usepackage{subfigure,caption}
+
+\usetikzlibrary{shapes,arrows} % für das flowchart
+
+\usepackage{marvosym} % für Briefumschlag-Symbol
+\usepackage{eurosym}
+\usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
+\usepackage{multirow} % Tabellen Zellen die sich über mehrere Zeilen ausdehnen
+\usepackage{wrapfig} % Textumlauf um Bilder
+\renewcommand{\texteuro}{\euro}
+
+\linespread{1.2}
+
+\date{2016}
+\author{Martin u.a.}
+\fancyfoot[L]{kontakt@fablab.fau.de}
+\title{Einweisung Stickmaschine}
+
+%auskommentierte Zeilen aus Lasercutter-Einweisung, als evtl. Vorlage im Dokument behalten
+%\tikzstyle{laserknopf} = [anchor=base, draw=black, fill=gray!10, rectangle, rounded corners, inner sep=2pt, outer sep = 3pt]
+%
+%% styles für das Flowchart
+%\tikzstyle{decision} = [diamond, draw, fill=blue!20,
+%    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+%\tikzstyle{block} = [rectangle, draw, fill=blue!20,
+%    text width=5em, text centered, rounded corners, minimum height=4em]
+%\tikzstyle{line} = [draw, very thick, color=black!50, -latex']
+%\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+%    minimum height=2em]
+%
+%% Knöpfe für Laser und Fernbedienung
+%\newcommand{\knopf}[2]{
+%    \begin{tikzpicture}[baseline={(box.base)}]
+%    \node [#1] (box) {
+%        \fontsize{9pt}{9pt}\selectfont \textbf{#2}\strut
+%    };
+%    \end{tikzpicture}
+%}
+
+
+\renewcommand{\todo}[1]{\textbf{\color{red}{TODO: #1}}}
+\newcommand{\pfeil}{\ensuremath{\rightarrow}}
+
+\begin{document}
+\maketitle
+
+\section{Was du dir merken musst}
+Den Inhalt dieses Abschnitts musst du wissen, alles andere kannst du bei Bedarf nachlesen.
+\subsection{Regeln und Hinweise}
+\begin{itemize}
+ \item nichts mit Gewalt einsetzen, verschieben, bewegen, verstellen! Die Mechanik ist feingliedrig und leichtgängig bei richtiger Behandlung.
+ \item für jede Näh- und Stickarbeit die richtige (Stretch-/ Stick-/ Universal-) und einwandfreie (gerade, nicht abgebrochen) Nadel verwenden
+ \item unbeschädigte Stichplatte verwenden (sonst droht der Nadelbruch).
+ \item immer den entsprechenden Nähfuß (Stickfuß, Normaler Fuß etc.) verwenden.
+ \item Das Nähstück nicht schieben oder ziehen (dies macht ggf. der Transporteur), sonst könnte die Nadel verbiegen oder gar brechen.
+ \item Maschine ausschalten bei Arbeiten im Nadelbereich (Nadel einfädeln, Nadel wechseln, Spule einsetzen, Nähfuß wechseln etc.).
+ \item immer normales Nähgarn als Unterfaden, nie Stickgarn verwenden.
+ \item ohne Rücksprache mit einem Betreuer darf niemals die Fadenspannung geändert werden.
+ \item immer die Maschine beobachten (insb. beim Sticken) und ggf. Stop drücken, falls irgendetwas untypisch ist (Geräusche, Geruch, Nadelbewegung...)
+ \item beim Sticken immer ein Vlies verwenden
+ \item das Handrad in richtige Richtung drehen (zu sich hin).
+\end{itemize}
+
+\vspace{5em}
+\hrule
+
+Alles bis hier musst du auswendig wissen. Den Rest kannst du bei Bedarf nachschauen.
+\vspace{0.2em}
+\hrule
+\vspace{3em}
+
+\pagebreak
+\section{Allgemeines}
+
+\subsection{Vor dem Nähen/ Sticken}
+\begin{itemize}
+ \item Nähmaschine auf einen stabilen Tisch stellen, sodass sie \textbf{nicht wackelt} zusammen mit
+ \begin{itemize}
+ 	\item[$\rightarrow$] \textbf{beim Nähen:} angeschobener Zubehörbox
+ 	\item[$\rightarrow$] \textbf{beim Sticken:} angeschobener Stickvorrichtung
+ \end{itemize}
+ \item Netzkabel anschließen (alles rechts an Maschine) und außerdem
+  \begin{itemize}
+ 	\item[$\rightarrow$] \textbf{beim Nähen:} Fußanlasser anschließen
+ 	\item[$\rightarrow$] \textbf{beim Sticken:} PC und Stickmaschine via USB-Kabel verbinden
+ \end{itemize}
+\end{itemize}
+
+\subsection{Nach dem Nähen/ Sticken}
+\begin{itemize}
+ \item Nähmaschine abschalten, bevor das Netzkabel getrennt wird
+ \item Fußanlasser abziehen und getrennt aufräumen
+ \item Nähfußheber in niedrigste Position bringen (Nähfuß ist komplett abgesenkt)
+\end{itemize}
+
+\subsection{Teile der Maschine und Zubehör}
+
+Eine Abbildung mit der Benennung aller Teile der Maschine findest du in der Gebrauchsanleitung auf S. 7-9. Lese dir diese durch und verinnerliche die Namen der Maschinenteile, um diese Einweisung zu verstehen.
+
+\vspace{2em}
+
+Folgende Fragen solltest du ohne Zögern beantworten können:
+\begin{itemize}
+ \item Welche Nähfüße gibt es? Welcher ist der Standard-Nähfuß?
+ \item wo liegt der Transporteur und der Transportschalter?
+ \item wo finde ich Näßfußheber und Einfädlerhebel?
+ \item Wo wird die Unterfadenspule eingesetzt?
+ \item Welche Klasse müssen die Unterfadenspulen haben?
+\end{itemize}
+
+
+\subsection{Nähfußheber}
+Der Nähfußheber kann in drei Positionen gebracht werden:
+\begin{itemize}
+ \item \textbf{abgesenkt:} Position zum Nähen und Sticken
+ \item \textbf{angehoben:} Position zum Einlegen und Entnehmen von Stoff 
+ \item \textbf{manuell weiter angehoben (höchste Position):} wichtig zum Einlegen und Entfernen der Stickrahmen und bei voluminösen Stoff usw. $\rightarrow$ \textbf{nicht mit Gewalt den Nähfuß anheben oder Stickrahmen darunter schieben!}
+\end{itemize}
+
+\subsection{Transporteur anheben/ versenken}
+Der Transporteur ist dafür zuständig, den Stoff beim Nähen automatisch weiterzuschieben, zu \textbf{transportieren}. 
+\newline Beim Sticken und Annähen von Knöpfen muss dieser versenkt werden:
+\begin{itemize}
+ \item entfernen des Zubehörfaches durch Schieben nach links
+ \item Hebel an der Rückseite auf jeweiliges Zeichen stellen (evtl erst leicht nach unten drücken, dann auf jeweilige Seite schieben):
+	\begin{itemize}
+ 	 \item \textbf{“Zähnchen unter Strich”:} Transporteur versenkt, Stoff wird nicht automatisch
+transportiert, wichtig zum Annähen von Knöpfen und beim Sticken
+ 	 \item Wird das Stickaggregat angebracht, wird der Transporteur automatisch versenkt. Er muss anschließend wieder angehoben werden! (Siehe “Sticken”)
+ 	 \item \textbf{“Zähnchen über Strich”:} Transporteur angehoben, Stoff wird automatisch transportiert 
+	\end{itemize}
+\end{itemize}
+
+\subsection{Nadeln}
+\textcolor{red}{Wichtig:} Unbedingt einwandfreie Nadeln verwenden: gute Qualität, gerade, nicht abgebrochen, schlägt nicht an, usw.!
+\begin{itemize}
+ \item \textbf{Normales Nähen:} Universalnadeln
+ \item \textbf{Sticken:} Sticknadeln (“schärfer”), roter Strich
+ \item \textbf{evtl:} Stretchnadeln (“runde Spitze” gelber Strich), Jeansnadeln (blauer Strich) usw.
+\end{itemize}
+
+\vspace{2em}
+
+\textbf{Nadel wechseln:}
+\newline \textbf{Anleitung S.21 oder zeigen lassen}
+\begin{itemize}
+ \item[$\rightarrow$] Nähfuß anheben
+ \item[$\rightarrow$] Nadel in höchste Stellung mit Handrad bringen
+ \item[$\rightarrow$] Schraube rechts an Nadel mit Zubehörwerkzeug öffnen
+ \item[$\rightarrow$] Nadel entfernen (nicht einfach herausfallenlassen, sondern herausnehmen)
+ \item[$\rightarrow$] Nadel mit abgeflachter Seite nach hinten einlegen
+ \item[$\rightarrow$] Nadel bis zum Anschlag nach oben schieben
+ \item[$\rightarrow$] Schraube festdrehen -  fest, aber ohne Gewalt
+\end{itemize}
+
+\subsection{Nähfuß wechseln}
+\textcolor{red}{Es gibt verschiedene Nähfüße, je nach Zweck müssen diese gewechselt werden! }
+\newline z.B. große Zierstiche, Reißverschluss, Knopfloch usw. 
+
+\vspace{2em}
+
+\textbf{Normalerweise:}
+\begin{itemize}
+ \item[$\rightarrow$] Nähfuß angehoben, Nadel in höchster Position evtl. manuell
+ \item[$\rightarrow$] kleinen Hebel direkt hinten am Nähfuß drücken
+ \item[$\rightarrow$] Nähfuß abnehmen
+ \item[$\rightarrow$] neuen Nähfuß mittig auf Stichplatte zentrieren 
+ \item[$\rightarrow$] Nähfuß-Halterung senken und Nähfuß einrasten lassen
+\end{itemize}
+
+\vspace{2em}
+
+\textbf{Anbringen/ Entfernen des Stickfußes:}
+\newline
+\textbf{Anleitung S. 65 oder zeigen lassen}
+\begin{itemize}
+ \item[$\rightarrow$] Nadel in höchste Position evtl manuell, Nähfuß angehoben
+ \item[$\rightarrow$] Schraube links an Nähfuß-Halterung mit Zubehörwerkzeug öffnen
+ \item[$\rightarrow$] universal Nähfuß-Halterung entfernen und zu Zubehör legen
+ \item[$\rightarrow$] Stickfuß so anbringen, dass Hebel oberhalb Nadelbefestigung liegt
+ \item[$\rightarrow$] festschrauben, ohne Gewalt
+ \item[$\rightarrow$] Stickfuß liegt in abgesenkter Position nicht auf der Stichplatte auf!
+\end{itemize}
+
+\subsection{Oberfaden einfädeln}
+
+\textcolor{red}{Nur bei angehobenem Fuß!}
+
+\vspace{1em}
+
+\textbf{Anleitung S.16 oder zeigen lassen}
+\begin{itemize}
+ \item senkrechten Stift aus Zubehör oben rechts einstecken, da eigentlicher Stift schlecht hält
+ \item Garnrollen meist auf den senkrechten Stift aufstecken, evtl.Garnrollenführungsscheibe leicht aufstecken (Anleitung S.10)
+ \item Nadeleinfädler verwenden siehe Anleitung S.18 $\rightarrow$ keine Gewalt, verstellt sich sehr leicht! (zur Not per Hand einfädeln, Garn muss von vorne nach hinten laufen)
+\end{itemize}
+
+\vspace{2em}
+
+\textbf{Test auf richtiges Einfädeln:}
+\begin{itemize}
+ \item[$\rightarrow$] Einfädeln
+ \item[$\rightarrow$] Nähfuß angehoben lassen
+ \item[$\rightarrow$] den Faden leicht nach hinten weg ziehen $\rightarrow$ wenig Widerstand!
+ \item[$\rightarrow$] Nähfuß absenken
+ \item[$\rightarrow$] den Faden leicht nach hinten weg ziehen $\rightarrow$ Widerstand, Nadel biegt sich leicht (nicht gegen Widerstand ziehen!)
+\end{itemize}
+
+\subsection{Unterfaden einfädeln}
+\textcolor{red}{Immer normales Nähgarn als Unterfaden, nie Stickgarn verwenden!}
+
+\vspace{1em}
+\textbf{Anleitung S.14 oder zeigen lassen}
+\begin{itemize}
+ \item[$\rightarrow$] Nadel in die höchste Position bringen
+ \item[$\rightarrow$] Spulenabdeckung entfernen
+ \item[$\rightarrow$] Spule so einlegen, dass sich der Faden gegen den Unterzeigersinn abrollt
+ \item[$\rightarrow$] Faden in den Schlitz und in die Führung legen bis zur Stichplatte und am Fadenabschneider abschneiden
+\end{itemize}
+
+\subsection{Spulen}
+\textbf{Anleitung S.12 oder zeigen lassen}
+\begin{itemize}
+ \item[$\rightarrow$] passende Spulen verwenden
+ \item[$\rightarrow$] Spule auf den Spuler drücken
+ \item[$\rightarrow$] Faden nach Anleitung einfädeln und einige Male per Hand um die Spule wickeln oder durch das Loch in der Spule fädeln
+ \item[$\rightarrow$] Spulenhebel gegen die Spule drücken $\rightarrow$ Spule dreht sich bis sie voll ist oder manuell Hebel wegdrücken
+ \item[$\rightarrow$] Faden abschneiden, Spule abnehmen
+\end{itemize}
+
+\pagebreak
+\section{Nähen}
+
+\textcolor{red}{Prinzipiell näht und die stickt die Maschine mit der eingestellten Fadenspannung sehr gut! }
+\textcolor{red}{\newline $\rightarrow$ Ohne Rücksprache mit einem Betreuer niemals die Fadenspannung ändern!}
+
+\vspace{1em}
+
+\textcolor{red}{Die Maschine zeigt auf dem Display auch alle aufgetretenen Fehler an, falls dies der Fall ist: \textbf{Fragen!}}
+
+
+\subsection{Stichart einstellen}
+\textbf{Anleitung S. 27, alle möglichen Stiche sind auf dem Musterbogen abgedruckt}
+\begin{itemize}
+ \item Stiche werden im Display angezeigt
+ \item oberes Wahlrad drehen wechselt die Stiche, oberes Rad drücken springt in 10er Schritten durch die Stiche
+ \item unteres Wahlrad: obere LED leuchtet: Stichbreite bzw. Nadelposition wird geändert
+ \item Durch Drücken des unteren Wahlrades: untere LED leuchtet: Stichlänge wird geändert
+\end{itemize}
+
+\subsection{Sonstige Nähfunktionen}
+\textbf{Anleitung S. 33}
+\begin{itemize}
+ \item \textbf{Vernähen:} Faden wird vernäht und löst sich nicht mehr, wichtig am Anfang und Ende des Nähens, bei Geradstichen auch mit Rückwärtstaste
+ \item \textbf{Fadenabschneider:} schneidet automatisch Ober- und Unterfaden ab
+ \item \textbf{Nadel ``hoch'' / ``tief'':} LED oben leuchtet $\rightarrow$ bei Loslassen des Anlassers ist Nadel oben, LED unten leuchtet $\rightarrow$ bei Loslassen des Anlassers bleibt Nadel unten im Stoff stecken 
+ \item \textbf{Rückwärtstaste:} näht automatisch 5 Stiche rückwärts, zB bei Geradstich, Zickzack
+ \item \textbf{Start/Stop Taste:} nur wichtig beim Sticken (Startet Stickvorgang)
+ \item \textbf{Speed:} hauptsächlich wichtig beim Sticken (Geschwindigkeit), steuert aber Empfindlichkeit des Fußanlassers! \textcolor{red}{Höchstens mittlere Geschwindigkeit einstellen!}
+\end{itemize}
+
+\pagebreak
+\section{Sticken}
+
+\subsection{Vorbereitungen Maschine}
+\begin{itemize}
+ \item[$\rightarrow$] Nähmaschine ausschalten oder ausgeschalten lassen
+ \item[$\rightarrow$] Stickfuß anbringen (siehe oben)
+ \item[$\rightarrow$] Sticknadel (Embroidery) einsetzen
+ \item[$\rightarrow$] Zubehörfach entfernen
+ \item[$\rightarrow$] Abdeckung zum Anschluss des Stickaggregats öffnen, Transporteur versenken (siehe oben)
+ \item[$\rightarrow$] Stickaggregat anbringen und einrasten
+ \item[$\rightarrow$] Maschine mit USB Kabel mit Laptop verbinden und Laptop hochfahren
+ \item[$\rightarrow$] Unterfaden farblich passendes normales Nähgarn
+ \item[$\rightarrow$] Oberfaden Stickgarn je nach Farbwunsch (Einfädeln siehe oben) $\rightarrow$ \textcolor{red}{Wichtig: darauf achten, dass der Faden richtig eingerastet ist und unter Spannung steht}
+\end{itemize}
+
+\subsection{Vorbereitungen Stoff, Einspannen}
+\begin{itemize}
+ \item Entscheidung Größe des Designs: kleiner Stickrahmen oder großer Stickrahmen
+ \item Rahmenstellschraube öffnen und Rahmen auseinander nehmen
+ \item normalerweise bei \textbf{nicht dehnbaren} Stoffen:
+	\begin{itemize}
+	 \item Stickvlies etwas größer als den gewählten Rahmen ausschneiden
+	 \item Vlies unten und Stoff darüber zwischen die beiden Rahmenteile legen (Beim großen Rahmen müssen die beiden Pfeile aufeinander treffen!)
+	 \item Stoff fest einspannen, dazu am Stoff ziehen (Vorsicht bei Vlies, dieses kann reißen)
+	 \item beim Klopfen auf den Stoff soll ein Geräusch ähnlich einer Trommel sein
+	 \item \textcolor{red}{Achtung, dass der Stoff richtig positioniert ist!} 
+	\end{itemize}
+\end{itemize} 
+
+
+\subsection{Vliesauswahl}
+\begin{itemize}
+ \item \textbf{normales Stickvlies, reißbar:} \textbf{immer} bei nicht dehnbaren Stoffen unter den Stoff in den Rahmen einspannen, kann nach dem Sticken abgerissen werden
+ \item \textbf{Stickvlies, nicht reißbar, fest:} bei gewünschter extra Stabilität bei nicht dehnbaren Stoffen, muss nach dem Sticken zurückgeschnitten werden
+ \item \textbf{Klebevlies, reißbar:} \textbf{immer} bei dehnbaren Stoffen verwenden, oder bei Stoffstücken kleiner als der Rahmen, nur Vlies einspannen, mit Stecknadel vorsichtig die Folie anritzen (nicht das eigentliche Vlies) und abziehen, Stoff positionieren und glatt aufkleben, kann nach dem Sticken abgerissen werden
+ \item \textbf{Stickfolie, wasserlöslich:} \textbf{nur} Folie einspannen ohne Vlies, nach dem Sticken kann Folie durch Befeuchten aufgelöst werden, zB Sticken von Spitze
+Auch bei voluminösen Stoffen (zB Frottee, Fleece): hier werden 3 Schichten eingespannt: Vlies, Stoff, Stickfolie dann wird gestickt und die oberste Schicht Folie nach dem Sticken durch Befeuchten entfernt
+so wird das Einsinken der Fäden in den Stoff verhindert!
+\end{itemize}
+
+\subsection{Vorbereitungen Software}
+\begin{itemize}
+ \item Nähmaschine (mit Laptop verbunden) anschalten ohne Stickrahmen!
+ \item Maschine initialisiert sich, Stickaggregat bewegt sich, nicht behindern!
+ \item FUTURA Software öffnen
+ \item Rahmengröße auswählen
+ \item Motiv aus Bibliothek auswählen
+ \begin{itemize}
+	\item[\textbf{oder:}] selbst gestalten, dies ist schwieriger und muss ausprobiert und optimiert 
+werden
+	\item[\textbf{oder:}] es gibt zahlreiche kostenlose Stickdateien online (Freebies)
+ \end{itemize}
+ \item beim Vergrößern oder Verkleinern der Datei werden die Stiche normalerweise angepasst, aber es ist ratsam immer auf ein Probestück zu sticken und dann erst auf das eigentliche Werkstück
+ \item Design oder Block über Nähmaschinen Icon an die Maschine senden
+\end{itemize}
+
+\subsection{Sticken}
+\textcolor{red}{Immer Maschine beobachten und \textbf{Stop} drücken, falls irgendetwas untypisch ist!}
+
+\vspace{1em}
+
+\begin{itemize}
+ \item Nähfuß anheben
+ \item Nadel in höchste Position
+ \item Stickrahmen einlegen: Hebel am Stickfuß nach oben drücken und Rahmen in die Führung schieben, sodass der Stoff oben liegt und sich nicht verhängen kann, muss einrasten
+ \item Nähfuß senken
+ \item Faden leicht festhalten, damit er bei den ersten Stichen nicht durchrutscht
+ \item Speed ungefähr in der Mitte, Start drücken, wenige Stiche sticken lassen, Stop drücken, Faden abschneiden, Start drücken
+ \item Maschine stickt alles einer Farbe selbstständig und regelt die Geschwindigkeit und schneidet am Ende eines Blocks den Faden selbstständig ab
+\end{itemize}
+
+
+\subsection{Nach dem Sticken}
+\begin{itemize}
+ \item Nähfuß anheben
+ \item Hebel links vom Rahmen am Stickaggregat zum Lösen des Rahmens drücken
+ \item Rahmen nach vorne schieben und Stickfuß am Hebel weiter anheben, damit er über den Rahmen kommt
+ \item Stoff aus Rahmen lösen und Vlies/Folie entfernen
+ \item Stickaggregat mit Hebel an der Vorderseite lösen und entfernen
+ \item Transporteur wieder anheben
+ \item Abdeckung Stecker schließen
+ \item normales Zubehörfach anbringen
+ \item Nadel herausnehmen
+ \item benutzte Nadel mit Lackstift markieren
+\end{itemize}
+
+
+
+%\section{Mögliche Fehlerursachen}
+%
+%\newcommand{\mittelpunktsZeichnung}[3]{
+% %\parbox{5cm}{
+%  \begin{center}
+%   \includegraphics[width=4.5cm]{#3} \\
+%   \textbf{#1} \\ {#2}
+%  \end{center}
+% %}
+%}
+
+%Problem		 										& mögliche Ursache															& mögliche Lösung \\ \hline \hline
+%\multirow{3}{0.333\textwidth}{Das Bild wird nicht aktualisiert}	& Es wurden trotz mehrmaligen Versuchens nicht alle Passermarken erkannt	& Vergewissere dich, dass keine Marke überdeckt ist, sondern alle von der Kammera gut erkannt werden können \\ \cline{2-3}
+%  													& Die Lichtverhältnisse sind zu schlecht, als dass der Kontrast zw. den weißen und schwarzen Stellen groß genug für die Mustererkennung wäre	& Schalte die Deckenbeleuchtung an oder aus\\ \cline{2-3}
+%  													& VisiCam läuft nicht														& Frage einen Betreuer, dass er den Dienst auf der ws01 startet \\ \hline
+%\multirow{2}{0.333\textwidth}{Der Laser schneidet nicht da, \\ wo er sollte}	& War der Laser in seinem Nullpunkt und nicht links oben auf der Arbeitsfläche?	& drücke am Laser \laserXyAus und \laserReset \\ \cline{2-3}
+%													& VisiCam ist verkalibriert &	Frage einen Betreuer, oder führe das Kalibrierungsprogramm in VisiCut durch \\ \hline
+%
+%\end{tabularx}
+%
+%\label{ArbeitsablaufFlowchart}
+%\begin{tikzpicture}[scale=0.8, node distance = 2.5cm, auto]
+%	%nodes, loosely sorted bottom to top
+%	\node [block] (luft) {Lüftung!};
+%	\node [block, right of=luft, node distance=3cm] (laser) {Lasern};
+%	\node [block, above of=luft] (fokus) {Fokussieren und bestücken};
+%	\node [block, above of=fokus] (uebertragen) {An den Laser senden};
+%	\node [block, above of=uebertragen] (visicut) {VisiCut};
+%	\node [decision, above of=visicut] (i_format) {Welches Format?};
+%	\node [cloud, above of=i_format, node distance=2.5cm] (inkscape) {Inkscape};
+%	\node [block, right of=uebertragen, node distance=3cm] (drucker) {\enquote{Drucken} mit Epilog Treiber};
+%	\node [block, right of=visicut, node distance = 3cm] (pdf) {Adobe Reader};
+%	\node [cloud, right of=drucker, node distance=3cm] (corel) {Corel Draw};
+%	\node [cloud, right of=corel, node distance=5cm] (cad) {CAD};
+%	\node [cloud, right of=pdf, node distance=6cm] (anderes) {Illustrator / sonstiges};
+%	%paths
+%	%decision i_format
+%	\path [line] (i_format) -- node [near start] {SVG} (visicut);
+%	\path [line] (i_format) -| node [near start] {PDF} (pdf);
+%	%inkscape
+%	\path [line] (inkscape) -- (i_format);
+%	%luft
+%	\path [line] (luft) -- (laser);
+%	%fokus
+%	\path [line] (fokus) -- (luft);
+%	%anderes
+%	\path [line] (anderes) -- node {PDF-Export} (pdf);
+%	%visicut
+%	\path [line] (visicut) -- (uebertragen);
+%	%pdf
+%	\path [line] (pdf) -- (drucker);
+%	%cad
+%	\path [line] (cad) -- (corel) node[midway,below] {DXF-Export};
+%	%corel
+%	\path [line] (corel) -- (drucker);
+%	%drucker
+%	\path [line] (drucker) -- (uebertragen);
+%	%uebertragen
+%	\path [line] (uebertragen) -- (fokus);
+%
+%\end{tikzpicture}
+
+
+% schoenere Darstellung
+\newpage
+\ccLicense{stickmaschine-einweisung}{Einweisung Stickmaschine}
+
+\end{document}
