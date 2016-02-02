@@ -1,2 +1,0 @@
-TARGET=my_tex_main_filename__TODO__changeme
-include fablab-document/Makefile.include
