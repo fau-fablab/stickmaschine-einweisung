@@ -1,17 +1,17 @@
-Drehbank Einweisung
-===================
+Einweisung Näh- und Stickmaschine
+=================================
 
 Einweisung des [FAU FabLab](https://fablab.fau.de) in die [Stickmaschine](https://fablab.fau.de/tool/stickmaschine-einweisung).
 
 Die neueste Version der Einweisung aus [github](https://github.com/fau-fablab/stickmaschine-einweisung) ist als PDF unter
-https://user.fablab.fau.de/~buildserver/drehbank-einweisung/Stickmaschine_Drehbank.pdf                                                                          
+https://user.fablab.fau.de/~buildserver/stickmaschine-einweisung/Einweisung_Stickmaschine.pdf                                                                          
 abrufbar und wird automatisch alle 20 Minuten aktualisiert.                                                                                                  
                                                                                                                                                              
 auschecken                                                                                                                                                   
 ----------                                                                                                                                                   
 
 ```bash
-git clone --recursive git@github.com:fau-fablab/stickmaschine-einweistung.git
+git clone --recursive git@github.com:fau-fablab/stickmaschine-einweisung.git
 ```
 
 Technische Details zum Buildserver siehe auf macgyver `/home/buildserver/README`
