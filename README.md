@@ -1,20 +1,22 @@
-Einweisung N�h- und Stickmaschine
+Einweisung Näh- und Stickmaschine
 =================================
 
-Einweisung des [FAU FabLab](https://fablab.fau.de) in die [Stickmaschine](https://fablab.fau.de/tool/stickmaschine-einweisung).
+Einweisung des [FAU FabLab](https://fablab.fau.de) in die [Näh- und Stickmaschine Singer Futura](https://fablab.fau.de/tool/nahmaschine).
 
 Die neueste Version der Einweisung aus [github](https://github.com/fau-fablab/stickmaschine-einweisung) ist als PDF unter
 https://user.fablab.fau.de/~buildserver/stickmaschine-einweisung/Einweisung_Stickmaschine.pdf                                                                          
 abrufbar und wird automatisch alle 20 Minuten aktualisiert.                                                                                                  
                                                                                                                                                              
 auschecken                                                                                                                                                   
-----------                                                                                                                                                   
 
 ```bash
 git clone --recursive git@github.com:fau-fablab/stickmaschine-einweisung.git
 ```
 
 Technische Details zum Buildserver siehe auf macgyver `/home/buildserver/README`
+
+[![Build Status](https://user.fablab.fau.de/~buildserver/stickmaschine-einweisung/status.svg)](https://user.fablab.fau.de/~buildserver/stickmaschine-einweisung/)
+[![TODOs](https://user.fablab.fau.de/~buildserver/stickmaschine-einweisung/status-todos.svg)](https://user.fablab.fau.de/~buildserver/stickmaschine-einweisung/)
 
 Lizenz
 ------
