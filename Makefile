@@ -1,2 +1,2 @@
-TARGET=Einweisung_Stickmaschine
+TARGET=Einweisung_Stickmaschine Einweisungsliste_Stickmaschine
 include fablab-document/Makefile.include
