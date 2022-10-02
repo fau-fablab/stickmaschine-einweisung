@@ -1,7 +1,7 @@
 Einweisung Näh- und Stickmaschine
 =================================
 
-Einweisung des [FAU FabLab](https://fablab.fau.de) in die [Näh- und Stickmaschine Singer Futura](https://fablab.fau.de/tool/nahmaschine).
+Einweisung des [FAU FabLab](https://fablab.fau.de) in die [Näh- und Stickmaschine Brother VR](https://fablab.fau.de/tool/textilbearbeitung/stickmaschine/).
 
 Die neueste Version der Einweisung aus [github](https://github.com/fau-fablab/stickmaschine-einweisung) ist als PDF unter
 https://brain.fablab.fau.de/build/stickmaschine-einweisung/Einweisung_Stickmaschine.pdf                                                                          
