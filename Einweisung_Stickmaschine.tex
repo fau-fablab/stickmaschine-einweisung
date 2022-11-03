@@ -50,7 +50,17 @@
 \renewcommand{\todo}[1]{\textbf{\color{red}{TODO: #1}}}
 \newcommand{\pfeil}{\ensuremath{\rightarrow}}
 
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true,    % Colours links instead of ugly boxes
+  urlcolor     = blue,    % Colour for external hyperlinks
+  linkcolor    = blue,    % Colour of internal links
+  citecolor    = red      % Colour of citations
+}
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}}
+
 \begin{document}
+
 \maketitle
 \todo{Das ist aktuell noch größtenteils die Einweisung für die alte Stickmaschine. Diese Einweisung ist daher noch nicht für den Produktiveinsatz freigegeben!}
 
@@ -80,6 +90,20 @@
 
 \section{Sticksoftware Hatch Embroidery 2}
 
+Zur Vorbereitung 
+
+\subsection{Sticklaptop}
+
+	Im Fablab steht ein Laptop mit der o.g. Sticksoftware bereit. bitte befolgende folgende Schriit, um die Software richtig zu nutzen:
+
+	\begin{enumerate}
+		\item Sticklaptop \textcolor{red}{vor(!)} dem Einschalten mit einem Netzwerkabel an eine freie Netzwerkdose im Fablab anstecken
+		\item Netzkabel des Laptops einstecken
+		\item Laptop einschalten
+		\item Wenn du gefragt wirst, ob du CAD Nutzen möchtest bitte auf \textcolor{red}{JA} klicken
+		\item Sticksoftware starten
+	\end{enumerate}
+
 \subsection{Stoffart einstellen}
 
 \subsection{Stickmuster anpassen}
@@ -96,17 +120,25 @@
 
 \subsection{Vor dem Sticken}
 \begin{itemize}
-	\item Nähmaschine auf einen stabilen Tisch stellen, sodass sie \textbf{nicht wackelt} zusammen mit
+	\item Stickmaschine auf dem Hubtisch betreiben oder auf dem einen stabilen Tisch stellen, sodass sie \textbf{nicht wackelt}
+	\item falls notwendig, Höhenausgleich der Füße
+	\item Netzkabel anstecken
+	\item Greifer ölen (siehe \fullref{sec:oelen})
 \end{itemize}
 
 \subsection{Nach dem Sticken}
 \begin{itemize}
 	\item Stickmaschine abschalten, bevor das Netzkabel getrennt wird
+	\item nach dem Sticken, immer den Stickrahmen entnehmen
+	\item falls die Maschine von dem Hubwagen genommen wurde, bitte wieder darauf stellen
+	\item das Zubehör bitte wieder dahin zurückräumen, wo es hingehört
+	\item die Haube zum Schutz der empfindlichen Teile wieder auf die Maschine setzen
+	\item den Wagen mit der Stickmaschine wieder an ihren vorgesehenen Platz zurückfahren
 \end{itemize}
 
 \subsection{Teile der Maschine und Zubehör}
 
-Eine Abbildung mit der Benennung aller Teile der Maschine findest du in der Gebrauchsanleitung auf S. %#TODO. Lese dir diese durch und verinnerliche die Namen der Maschinenteile, um diese Einweisung zu verstehen.
+Eine Abbildung mit der Benennung aller Teile der Maschine findest du in der Gebrauchsanleitung auf S. 14f. Lese dir diese durch und verinnerliche die Namen der Maschinenteile, um diese Einweisung zu verstehen.
 
 
 \subsection{Nadeln}
@@ -121,9 +153,9 @@ Die Verwendung falscher Nadeln kann zu Nadelbrüchen, Fadenrissen oder Schaden a
 \vspace{2em}
 
 \textbf{Nadel wechseln:}
-\newline \textbf{Anleitung S.21 oder zeigen lassen}
+\newline \textbf{Anleitung S.72 oder zeigen lassen}
 \begin{itemize}
-	\item Nähfuß anheben
+	\item Stickmaschine ausschalten
 	\item Nadel in höchste Stellung mit Handrad bringen
 	\item Schraube rechts an Nadel mit Zubehörwerkzeug öffnen
 	\item Nadel entfernen (nicht einfach herausfallenlassen, sondern herausnehmen)
@@ -131,6 +163,13 @@ Die Verwendung falscher Nadeln kann zu Nadelbrüchen, Fadenrissen oder Schaden a
 	\item Nadel bis zum Anschlag nach oben schieben
 	\item Schraube festdrehen -  fest, aber ohne Gewalt
 	
+\end{itemize}
+
+\subsection{Greifer ölen}
+\label{sec:oelen}
+\begin{itemize}
+	\item Greiferklappe öffnen
+	\item 
 \end{itemize}
 
 \vspace{2em}
@@ -164,7 +203,7 @@ Bei Verwendung von Garnrollennetzen muss möglicherweise die Fadenspannung einge
 
 \vspace{2em}
 
-\subsection{Unterfaden einfädeln}
+\subsection{Unterfaden einsetzen}
 \textcolor{red}{Als Unterfaden ist üblicherweise weißes und schwarzes Garn auf großen Konen vorhanden. Bitte nicht das deutlich teurere farbige Stickgarn verwenden, da der Unterfaden sowieso nicht sichtbar sein wird.}
 
 \vspace{1em}
@@ -174,7 +213,7 @@ Bei Verwendung von Garnrollennetzen muss möglicherweise die Fadenspannung einge
 	\item Fadenaufnehmer ohne Gwalt ein Stück nach vorne klappen. \textcolor{red}{Achtung: wird immer ein Stück nach oben stahen - ann nie ganz heruntergeklappt werden}
 	\item Hebel an Spulenkapsel nach vorne ziehen, so festhalten und Kapsel herausziehen 
 	\item Falls noch eine Spule in der Spulenkapsel vorhanden ist: Spule herausnehmen
-	\item Greifer ölen (siehe Kapitel ''Greifer ölen'')
+	\item Greifer ölen (siehe Kapitel \fullref{sec:oelen})
 	\item Falls keine bereits aufgespulte Unterfadenspule vorhanden ist, muss eine neue aufgespult werden (siege Kapitel ''Unterfaden aufspulen'')
 	\item Spule so einlegen, so dass sich der Faden gegen den Unterzeigersinn abrollt
 	\item Faden in den Schlitz und unter Metallfeder führen
@@ -192,9 +231,6 @@ Bei Verwendung von Garnrollennetzen muss möglicherweise die Fadenspannung einge
 	\item Spulenhebel gegen die Spule drücken \pfeil Spule dreht sich bis sie voll ist oder manuell Hebel wegdrücken
 	\item Faden abschneiden, Spule abnehmen
 \end{enumerate}
-
-\pagebreak
-\section{Sticken}
 
 \subsection{Vorbereitungen Maschine}
 \begin{enumerate}
