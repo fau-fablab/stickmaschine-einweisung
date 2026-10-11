@@ -1,0 +1,63 @@
+% =====================================================================
+%  Weg des Oberfadens von der Garnrolle bis zur Nadel, schematisch von
+%  vorn, nicht maßstäblich. Nummern wie in der Liste im Abschnitt
+%  "Oberfaden einfädeln". Selbst gezeichnet.
+% =====================================================================
+\begin{tikzpicture}[x=0.95mm, y=0.95mm, font=\scriptsize]
+  % Garnrolle auf dem Garnrollenstift
+  \draw[metall] (-40,76) rectangle (-38,109);
+  \draw[fill=oberfaden!70, draw=black!70, line width=0.6pt] (-46,80) rectangle (-32,104);
+  \foreach \y in {83,86,...,101} \draw[oberfaden!40!black, line width=0.3pt] (-46,\y) -- (-32,\y);
+  \draw[kunststoff] (-45,104) rectangle (-33,107);
+  \node[anchor=east, align=right] at (-48,92) {Garnrolle mit\\Garnrollenkappe};
+
+  % Fadenführung über der Garnrolle
+  \draw[metall] (-52,120) rectangle (16,123);
+  \fill[white] (-39,121.5) circle (0.9);
+  \fill[white] (10,121.5) circle (0.9);
+  \node[anchor=south] at (-18,124) {Fadenführung über den Garnrollen};
+
+  % Maschinenkopf von vorn
+  \draw[kopf, rounded corners=4] (0,18) rectangle (70,100);
+  \draw[gehaeuse, rounded corners=2] (5,70) rectangle (65,96);        % helle Abdeckung oben
+  \draw[gehaeuse] (38,24) rectangle (60,92);                         % Abdeckung mit Schlitzen
+  \fill[black!70] (42,28) rectangle (45.5,88);                       % linker Schlitz
+  \fill[black!70] (52.5,48) rectangle (55,88);                       % rechter Schlitz
+  \draw[kunststoff] (9,88) rectangle (21,91);                        % Führungsplatte 1
+  \draw[metall, fill=black!45] (22,78) circle (5);                   % Fadenspanner
+  \draw[black!80, fill=black!15] (22,78) circle (1.6);
+  \draw[kunststoff] (29,84) rectangle (39,87);                       % Führungsplatte 2
+  \draw[metall] (40.5,80) rectangle (49,84);                         % Fadenhebel
+  \fill[white] (46.8,82) circle (0.8);
+  % Nadelstange, Stickfuß, Nadel
+  \draw[gehaeuse] (32,6) rectangle (54,18);
+  \draw[metall] (40.5,-2) rectangle (46.5,6);
+  \draw[metall, fill=black!55] (43.1,-14) -- (43.9,-14) -- (44.1,-2) -- (42.9,-2) -- cycle;
+  \draw[kunststoff] (35.5,-16) rectangle (51.5,-13);                 % Stickfuß
+  \fill[white] (43.5,-9) ellipse (0.25 and 0.8);                     % Nadelöhr
+
+  % Weg des Fadens
+  \draw[faden]
+    (-39,104) -- (-39,121.5) -- (10,121.5) -- (8,87.4) -- (19,87.4)
+    -- (22,83) arc[start angle=90, end angle=-270, radius=5]
+    -- (29,83.4) -- (39,83.4) -- (53.75,86) -- (53.75,52)
+    arc[start angle=0, end angle=-180, radius=4.5] -- (44.75,80) -- (46.8,82)
+    -- (42.8,80) -- (42.8,26) -- (43.5,20) -- (43.5,-9);
+  \draw[drehung, oberfaden!60!black] (29.3,76) arc[start angle=-15, end angle=-100, radius=7.5];
+
+  % Nummern der Stationen
+  \node[marke] at (-46,116) {1};
+  \node[marke] at (4,116) {2};
+  \node[marke] at (12,76) {3};
+  \node[marke] at (34,92) {4};
+  \node[marke] at (64,56) {5};
+  \node[marke] at (35,74) {6};
+  \node[marke] at (35,30) {7};
+  \node[marke] at (60,12) {8};
+  \node[marke] at (36,-7) {9};
+
+  \txt[anchor=east]{-8,66}{17.5,75.5}{Fadenspanner:\\einmal im Uhrzeigersinn}
+  \txt[anchor=west]{76,82}{48,82}{Fadenhebel:\\von rechts einfädeln}
+  \txt[anchor=west]{76,44}{49.25,47.3}{unten herum}
+  \txt[anchor=west]{76,-9}{44.2,-9}{Nadelöhr: mit dem\\automatischen Einfädler}
+\end{tikzpicture}

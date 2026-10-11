@@ -1,314 +1,530 @@
+% !TeX spellcheck = de_DE_frami
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% COPYRIGHT: (C) 2012-2015 FAU FabLab and others
+% COPYRIGHT: (C) 2012-2026 FAU FabLab and others
 % Bearbeitungen ab 2015-02-20 fallen unter CC-BY-SA 3.0
 % Sobald alle Mitautoren zugestimmt haben, steht die komplette Datei unter CC-BY-SA 3.0. Bis dahin ist der Lizenzstatus aller alten Bestandteile ungeklärt.
+% Text in eigenen Worten, KEINE Passagen oder Abbildungen aus den
+% Brother-Anleitungen übernehmen (siehe README).
+% Die Zeichnungen in zeichnungen/ sind selbst mit TikZ erstellt,
+% Fotos nur mit freier Lizenz (siehe bilder/QUELLEN.md).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \newcommand{\basedir}{fablab-document}
 \documentclass{\basedir/fablab-document}
 
-\usepackage{amssymb} % Symbole für Knöpfe
-\usepackage{subfigure,caption}
-
-\usepackage{marvosym} % für Briefumschlag-Symbol
-\usepackage{eurosym}
+\usepackage{amssymb}
+\usepackage{textcomp}
 \usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
-\usepackage{multirow} % Tabellen Zellen die sich über mehrere Zeilen ausdehnen
-\usepackage{wrapfig} % Textumlauf um Bilder
-\renewcommand{\texteuro}{\euro}
+\usepackage{caption}
+\input{zeichnungen/stil} % Farben und Stile der Zeichnungen
 
-\linespread{1.2}
+% Nummer eines Teils wie im Foto der Bedienelemente, z.B. \teil{3}
+\newcommand{\teil}[1]{\tikz[baseline=(n.base)]\node[marke, minimum size=3.8mm, font=\tiny\bfseries](n){#1};}
+\renewcaptionname{ngerman}{\figurename}{Abb.}
+\newcommand{\pfeil}{\ensuremath{\rightarrow}}
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}}
 
-\date{2022}
+\date{\today}
 \author{Harald Kraft u.a.}
 \fancyfoot[L]{kontakt@fablab.fau.de}
 \title{Einweisung Stickmaschine Brother VR}
 
-%auskommentierte Zeilen aus Lasercutter-Einweisung, als evtl. Vorlage im Dokument behalten
-%\tikzstyle{laserknopf} = [anchor=base, draw=black, fill=gray!10, rectangle, rounded corners, inner sep=2pt, outer sep = 3pt]
-%
-%% styles für das Flowchart
-%\tikzstyle{decision} = [diamond, draw, fill=blue!20,
-%    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
-%\tikzstyle{block} = [rectangle, draw, fill=blue!20,
-%    text width=5em, text centered, rounded corners, minimum height=4em]
-%\tikzstyle{line} = [draw, very thick, color=black!50, -latex']
-%\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
-%    minimum height=2em]
-%
-%% Knöpfe für Laser und Fernbedienung
-%\newcommand{\knopf}[2]{
-%    \begin{tikzpicture}[baseline={(box.base)}]
-%    \node [#1] (box) {
-%        \fontsize{9pt}{9pt}\selectfont \textbf{#2}\strut
-%    };
-%    \end{tikzpicture}
-%}
-
-
-\renewcommand{\todo}[1]{\textbf{\color{red}{TODO: #1}}}
-\newcommand{\pfeil}{\ensuremath{\rightarrow}}
-
-\usepackage{hyperref}
-	\hypersetup{
-	colorlinks   = true,    % Colours links instead of ugly boxes
-	urlcolor     = blue,    % Colour for external hyperlinks
-	linkcolor    = blue,    % Colour of internal links
-	citecolor    = red      % Colour of citations
-}
-\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}}
-
 \begin{document}
 
-\maketitle
-\todo{Das ist aktuell noch größtenteils die Einweisung für die alte Stickmaschine. Diese Einweisung ist daher noch nicht für den Produktiveinsatz freigegeben!}
+	\maketitle
+	\begin{center}
+		Für die Stickmaschine \textbf{Brother VR} mit Kappenrahmen\\[1mm]
+		{\small Version \Version}
+	\end{center}
 
-\section{Regeln und Hinweise}
-\subsection{Was du dir merken solltest}
-\begin{itemize}
-	\item nichts mit Gewalt verschieben, einsetzen, bewegen, verstellen! Die Mechanik ist leichtgängig bei korrekter Handhabung und Behandlung.
-	\item für jede Stickarbeit die richtige und einwandfreie (gerade, nicht abgebrochen) Nadel verwenden
-	\item nicht bei beschädigter Stichplatte nähen (sonst droht der Nadelbruch) und an die Betreuer wenden.
-	\item ohne Rücksprache mit einem Betreuer darf niemals die Unterfadenspannung geändert werden.
-	\item immer die Maschine beobachten und ggf. Stop drücken bzw. die Maschine ausschalten, falls irgendetwas untypisch ist (Geräusche, Geruch, Nadelbewegung...)
-	\item beim Sticken immer ein Vlies verwenden
-\end{itemize}
+	\textbf{Nur eingewiesene Personen dürfen die Stickmaschine selbstständig benutzen.}
+	Wenn du noch nicht eingewiesen bist, frage einen Betreuer. Die Einweisung gibt es beim \enquote{StickLab} (Terminkalender auf der FabLab-Webseite). Nach der Einweisung und Unterschrift darfst du die Stickmaschine selbstständig verwenden.
 
-\subsection{Welche Fragen du beantworten / Was du vorführen können solltest}
-\begin{itemize}
-	\item Oberfaden einfädeln
-	\item Unterfadenspule aufspulen
-	\item Unterfadenspule einsetzen
-	\item Stoff in Stickrahmen einspannen
-	\item kleine Stickrahmen in die Maschine einsetzen
-	\item große Stickrahmen in die Maschine einsetzen
-	\item 
-\end{itemize}
-\vspace{5em}
-\hrule
+	\section{Regeln und Sicherheit}
 
-\section{Sticksoftware Hatch Embroidery 2}
+	\begin{itemize}
+		\item Die Maschine stickt \textbf{nie unbeaufsichtigt}. Beobachte sie und drücke sofort \textbf{Start/Stopp}, wenn etwas ungewöhnlich ist: Geräusche, Geruch, schief laufender Faden, Stoff, der sich verfängt.
+		\item Solange die Maschine eingeschaltet ist, \textbf{Hände, lange Haare, Schmuck und Gegenstände} weg von Nadel, Fadenhebel, Stickarm und Rahmen. Der Stickarm fährt auch beim Einschalten und beim Prüfen des Stickbereichs.
+		\item Rahmen nur einsetzen oder abnehmen, wenn die Taste Start/Stopp \textbf{rot} leuchtet.
+		\item Nadel wechseln, Greifer ölen und reinigen nur bei \textbf{ausgeschalteter} Maschine.
+		\item Nie mit verbogener, stumpfer oder abgebrochener Nadel oder mit beschädigter Stichplatte sticken. Die Nadel kann brechen und Splitter können herumfliegen.
+		\item Nichts mit Gewalt verschieben, einsetzen oder verstellen. Richtig bedient, geht an der Maschine alles leicht.
+		\item Netzkabel direkt in eine Wandsteckdose stecken, nicht in eine Mehrfachsteckdose. Die Maschine wiegt ca. 31\,kg: nur zu zweit tragen.
+		\item Schäden an der Maschine sofort einem Betreuer melden: \texttt{fablab-aktive@fablab.fau.de}.
+	\end{itemize}
 
-Zur Vorbereitung 
+	\newpage
 
-\subsection{Sticklaptop}
+	\renewcommand{\contentsname}{Inhaltsverzeichnis / Arbeitsablauf}
+	\setcounter{tocdepth}{2}
+	\tableofcontents
+	\newpage
 
-	Im Fablab steht ein Laptop mit der o.g. Sticksoftware bereit. Bitte befolge folgende Schritte, um die Software richtig zu nutzen:
+	\section{Die Stickmaschine}
 
+	\begin{center}
+		\begin{tabular}{r|l}
+			Hersteller & Brother \\
+			Modell & VR, Einnadel-Stickmaschine \\
+			Stickfläche & bis $200 \times 200$\,mm (größter Rahmen) \\
+			 & $130 \times 60$\,mm mit dem Kappenrahmen \\
+			Geschwindigkeit & 400 bis 1000 Stiche pro Minute \\
+			 & mit Kappenrahmen 400 bis 600 \\
+			Nadeln & Flachkolben-Sticknadeln Organ HAX 130 EBBR \\
+			 & oder Schmetz 130/705 H-E \\
+			Oberfaden & Stickgarn Stärke 40 (Rayon oder Polyester) \\
+			Gewicht & ca. 31\,kg \\
+		\end{tabular}
+	\end{center}
+
+	Die Maschine stickt mit einer Nadel. Bei mehrfarbigen Mustern hält sie nach jeder Farbe an, schneidet den Faden ab und wartet, bis du die nächste Garnrolle eingefädelt hast.
+
+	\subsection{Bedienelemente}
+	\label{sec:bedienelemente}
+
+	Abb.~\ref{abb:bedienelemente} zeigt die Stickmaschine des FabLabs. Die Nummern werden in der ganzen Einweisung verwendet.
+
+	\begin{center}
+		\input{zeichnungen/foto-bedienelemente}
+		\captionof{figure}{Stickmaschine Brother VR des FabLabs mit großem Rahmen ($200 \times 200$\,mm) von oben. Die Nummern bezeichnen die Bedienelemente aus der Tabelle.}
+		\label{abb:bedienelemente}
+	\end{center}
+
+	\begin{center}
+		\small
+		\renewcommand{\arraystretch}{1.25}
+		\renewcommand{\tabularxcolumn}[1]{m{#1}}
+		\begin{tabularx}{\textwidth}{|c|m{40mm}|X|}
+			\hline
+			& \textbf{Teil} & \textbf{Wozu} \\ \hline
+			\teil{1} & Display (Touchscreen) & Muster wählen und bearbeiten, Rahmen, Stichzahl und Garnfarben anzeigen. Nur mit dem Finger oder dem Touchstift bedienen. \\ \hline
+			\teil{2} & Taste Start/Stopp & Leuchtet \textbf{rot}: gesperrt. Blinkt \textbf{grün}: entsperrt, startet beim nächsten Druck. Leuchtet grün: stickt. \\ \hline
+			\teil{3} & Taste Nadelposition & Nadel heben oder senken. \\ \hline
+			\teil{4} & Taste Fadenabschneider & Schneidet Ober- und Unterfaden ab. Rechts daneben (im Foto angeschnitten) liegt die Taste für den \textbf{automatischen Einfädler}. \\ \hline
+			\teil{5} & Stickarm & Bewegt den Rahmen. Seinen Bewegungsbereich frei halten. \\ \hline
+			\teil{6} & Rändelschrauben & Halten den verschiebbaren Arm des Stickrahmenhalters. \\ \hline
+			\teil{7} & Stickrahmenhalter & Der linke Arm wird auf die Rahmengröße eingestellt, der Rahmen rastet in seine Klemmen ein. \\ \hline
+			\teil{8} & Lasche am Rahmen & Mit Loch und Schlitz für die Stifte des Halters. Der Buchstabe (hier \enquote{a}) zeigt, zu welchem Halter der Rahmen gehört. \\ \hline
+			\teil{9} & Stickrahmen & Hier der große Rahmen $200 \times 200$\,mm. \\ \hline
+			\teil{10} & Stickfuß und Nadel & Unter der Nadel liegt der Greifer mit der Unterfadenspule. \\ \hline
+		\end{tabularx}
+	\end{center}
+
+	Nicht im Foto zu sehen:
+	\begin{itemize}
+		\item \textbf{Fadenführung} mit den Garnrollenstiften und dem Spuler für den Unterfaden oben auf der Maschine.
+		\item \textbf{Netzschalter}, \textbf{Handrad} und \textbf{USB-Anschlüsse} auf der rechten Seite. Das Handrad nur in Richtung Display drehen.
+		\item \textbf{Greiferabdeckung} vorn unter der Nadel. Dahinter sitzen Greifer und Spulenkapsel.
+	\end{itemize}
+
+	\subsection{Anleitungen}
+	Diese Einweisung fasst die Regeln des FabLabs zusammen und erklärt die Bedienung in eigenen Worten. Ausführlicher sind die Anleitungen von Brother: Die Kurzanleitung liegt bei der Maschine, die ausführliche Bedienungsanleitung und die Anleitung zum Kappenrahmen gibt es als PDF auf \url{https://support.brother.com} und auf dem FabLab-Server unter \texttt{fablab-data/Maschinen/Brother Stickmaschine}.
+
+	\subsection{Was du nach der Einweisung können solltest}
+	\begin{itemize}
+		\item Nadel prüfen und wechseln
+		\item Greifer ölen
+		\item Unterfaden aufspulen und Spule einsetzen
+		\item Oberfaden einfädeln und Garnfarbe wechseln
+		\item Passendes Vlies wählen, Stoff einspannen
+		\item Stickrahmenhalter einstellen und Rahmen einsetzen
+		\item Muster laden, Stickbereich prüfen, Sticken starten und anhalten
+		\item Fadenspannung beurteilen
+		\item Rahmen abnehmen und die Maschine aufgeräumt hinterlassen
+		\item Für Kappen: Kappe einspannen und den Kappenrahmen einsetzen (Abschnitt~\ref{sec:kappen})
+	\end{itemize}
+
+	\section{Sticksoftware Hatch Embroidery 2}
+
+	Die Maschine bringt fertige Motive, Rahmenmuster und Schriften mit. Einfache Schriftzüge kannst du direkt am Display setzen. Eigene Motive oder Bilder bereitest du mit der Software \textbf{Hatch Embroidery 2 Digitizer} auf dem Sticklaptop vor. Plane dafür genug Zeit ein, vor allem beim ersten Mal.
+
+	\subsection{Sticklaptop starten}
 	\begin{enumerate}
-		\item Sticklaptop \textcolor{red}{vor(!)} dem Einschalten mit einem Netzwerkkabel an eine freie Netzwerkdose im Fablab anstecken
-		\item Netzkabel des Laptops einstecken
-		\item Laptop einschalten
-		\item Wenn du gefragt wirst, ob du CAD nutzen möchtest, bitte auf \textcolor{red}{JA} klicken
-		\item Sticksoftware 'Hatch 2' starten
-  		\item Gegebenenfalls die im Fablab-Wiki unter Interna-Lieferanten-WilcomHatchEmbrodery hinterlegten Zugangsdaten eingeben
+		\item Den Sticklaptop \textbf{vor} dem Einschalten mit einem Netzwerkkabel an eine freie Netzwerkdose im FabLab anschließen.
+		\item Netzteil einstecken und Laptop einschalten.
+		\item Bei der Frage, ob CAD genutzt werden soll, \textbf{Ja} wählen.
+		\item Hatch 2 starten. Fragt Hatch nach Zugangsdaten: Sie stehen im FabLab-Wiki unter Interna \pfeil{} Lieferanten \pfeil{} WilcomHatchEmbroidery.
 	\end{enumerate}
 
-\subsection{Stoffart einstellen}
+	\subsection{Ein Stickmuster vorbereiten}
+	\begin{enumerate}
+		\item \textbf{Stoffart einstellen.} Hatch passt Stichdichte und Unterlagestiche an den Stoff an. Für dehnbare Stoffe (T-Shirt, Polo) und Kappen eine passende Stoffart wählen.
+		\item \textbf{Text einfügen} mit dem Schriftwerkzeug. Schrift nicht zu klein wählen: Buchstaben unter etwa 5\,mm Höhe werden unsauber.
+		\item \textbf{Bilder umwandeln} mit der automatischen Digitalisierung. Gut geeignet sind Grafiken mit wenigen, klar abgegrenzten Farbflächen. Fotos und Farbverläufe eignen sich kaum. Das Ergebnis immer kontrollieren und kleine Flächen und Lücken von Hand nacharbeiten.
+		\item \textbf{Größe prüfen.} Das Muster muss in den Rahmen passen, den du verwenden willst. Am besten den kleinsten passenden Rahmen nehmen (Abschnitt~\ref{sec:rahmen}).
+		\item \textbf{Stichzahl ansehen.} Sie bestimmt Stickzeit und Preis: Abgerechnet wird nach Stichzahl (Preisliste Textilbearbeitung).
+		\item Das Muster als Hatch-Datei (\texttt{.EMB}) speichern, damit du es später noch bearbeiten kannst, und für die Maschine als \textbf{\texttt{.PES}} exportieren.
+	\end{enumerate}
 
-\subsection{Stickmuster anpassen}
+	Die \texttt{.PES}-Datei kommt per USB-Stick an die Maschine. Der Stick sollte nur Stickdateien enthalten.
 
-\subsection{Sticharten anpassen}
+	\section{Maschine vorbereiten}
 
-\subsection{Text einfügen}
-
-\subsection{Bilder einfügen und in Stickmuster umwandeln}
-
-\pagebreak
-
-\section{Sticken mit der Stickmaschine Brother VR}
-
-\subsection{Vor dem Sticken}
-\begin{itemize}
-	\item Stickmaschine auf dem Hubtisch betreiben oder auf einen stabilen Tisch stellen, sodass sie \textbf{nicht wackelt}
-	\item falls notwendig, Höhenausgleich der Füße
-	\item Netzkabel anstecken
-	\item Greifer ölen (siehe \fullref{sec:oelen})
-\end{itemize}
-
-\subsection{Nach dem Sticken}
-\begin{itemize}
-	\item Stickmaschine abschalten, bevor das Netzkabel getrennt wird
-	\item nach dem Sticken immer den Stickrahmen entnehmen
-	\item falls die Maschine von dem Hubwagen genommen wurde, bitte wieder daraufstellen
-	\item das Zubehör bitte wieder dahin zurückräumen, wo es hingehört
-	\item die Haube zum Schutz der empfindlichen Teile wieder auf die Maschine setzen
-	\item den Wagen mit der Stickmaschine wieder an seinen vorgesehenen Platz zurückfahren
-\end{itemize}
-
-\subsection{Teile der Maschine und Zubehör}
-
-Eine Abbildung mit der Benennung aller Teile der Maschine findest du in der Gebrauchsanleitung auf S. 14f. Lies dir diese durch und verinnerliche die Namen der Maschinenteile, um diese Einweisung zu verstehen.
-
-
-\subsection{Nadeln}
-\textcolor{red}{Wichtig:} Unbedingt einwandfreie Nadeln verwenden: gute Qualität, gerade, nicht abgebrochen, schlägt nicht an, usw.!
-
-Die Maschine ist für die Verwendung von Flachkolben-Sticknadeln ausgelegt. Vom Hersteller werden Nadeln vom Typ Organ HAX 130 EBBR empfohlen. Alternativ können auch Schmetz 130/705 H-E verwendet werden. 
- 
-Die Verwendung falscher Nadeln kann zu Nadelbrüchen, Fadenrissen oder Schaden am Nadeleinfädlermechanismus führen.
-
-\textcolor{red}{Verwende daher stets nur vom Fablab zur Verfügung gestellte Nadeln oder kläre die Verwendung von anderen Nadeln immer vorher mit den Betreuer:innen ab.}
-
-\vspace{2em}
-
-\textbf{Nadel wechseln:}
-\newline \textbf{Anleitung S.72 oder zeigen lassen}
-\begin{itemize}
-	\item Stickmaschine ausschalten
-	\item Nadel in höchste Stellung mit Handrad bringen
-	\item Schraube rechts an Nadel mit Zubehörwerkzeug öffnen
-	\item Nadel entfernen (nicht einfach herausfallen lassen, sondern herausnehmen)
-	\item Nadel mit abgeflachter Seite nach hinten einlegen
-	\item Nadel bis zum Anschlag nach oben schieben
-	\item Schraube festdrehen -  fest, aber ohne Gewalt
-	
-\end{itemize}
-
-\subsection{Greifer ölen}
-\label{sec:oelen}
-\begin{itemize}
-	\item Greiferklappe öffnen
-	\item 
-\end{itemize}
-
-\vspace{2em}
-
-\subsection{Oberfaden einfädeln}
-
-Bei Metallgarnen oder ähnlich starken Garnen kann es sinnvoll sein, vor dem Sticken eines der beiliegenden Spulennetze über die Garnrollen zu ziehen. Wenn das Netz zu lang ist, falte es einmal, um es auf die richtige Länge zu bringen.
-Bei Verwendung von Garnrollennetzen muss möglicherweise die Fadenspannung eingestellt werden.
-
-\textbf{Ausführliche Anleitung S.45 und zeigen lassen}
-\begin{enumerate}
-	\item Wenn noch nicht vorhanden, Filzscheibe auf Garnrollenhalter legen
-	\item Garnrolle aufstecken
-	\item Garnrollenkappe aufstecken
-	\item Faden durch Loch in Metallleiste über Garnrollenhalter fädeln (Nr. 1)
-	\item Faden durch Loch auf Maschinenoberseite führen (Nr. 2)
-	\item von links unter erste Führungsplatte 
-	\item im Uhrzeigersinn einmal um den Fadenspanner wickeln (Nr. 3)
-	\item von links unter zweite Führungsplatte ziehen
-	\item im rechten Schlitz nach unten, unten herum und im linken Schlitz nach oben führen (Nr. 4)
-	\item von rechts durch Fadenhebel führen (Nr. 5)
-	\item im linken Schlitz nach unten führen und durch Loch (Nr. 6) ziehen
-	\item von hinten in Drahtfadenführung an Nadelstange einhängen
-	\item Einfädeltaste (ganz rechts) drücken, damit der automatische Einfädler nach vorne fährt
-	\item ca. 15cm Faden herausziehen
-	\item von rechts unter die Gabel des automatischen Einfädlers führen
-	\item Faden von links nach oben über Fadenabschneider führen, um ihn auf die richtige Länge zu kürzen und dort hängen lassen
-	\item Einfädeltaste (ganz rechts) erneut drücken, damit der Faden eingefädelt wird
-	\item kontrollieren, ob Faden richtig eingefädelt ist
-\end{enumerate}
-
-\vspace{2em}
-
-\subsection{Unterfaden einsetzen}
-\textcolor{red}{Als Unterfaden ist üblicherweise weißes und schwarzes Garn auf großen Konen vorhanden. Bitte nicht das deutlich teurere farbige Stickgarn verwenden, da der Unterfaden sowieso nicht sichtbar sein wird.}
-
-\vspace{1em}
-\textbf{Ausführliche Anleitung S.32 oder zeigen lassen}
-\begin{enumerate}
-	\item Greiferabdeckung herunterklappen (\textcolor{red}{Bitte Vorsicht}: Klappe kann im heruntergeklappten Zustand leicht abbrechen)
-	\item Fadenaufnehmer ohne Gewalt ein Stück nach vorne klappen. \textcolor{red}{Achtung: wird immer ein Stück nach oben stehen -- kann nie ganz heruntergeklappt werden}
-	\item Hebel an Spulenkapsel nach vorne ziehen, so festhalten und Kapsel herausziehen 
-	\item Falls noch eine Spule in der Spulenkapsel vorhanden ist: Spule herausnehmen
-	\item Greifer ölen (siehe Kapitel \fullref{sec:oelen})
-	\item Falls keine bereits aufgespulte Unterfadenspule vorhanden ist, muss eine neue aufgespult werden (siehe Kapitel \enquote{Unterfaden aufspulen})
-	\item Spule so einlegen, dass sich der Faden gegen den Uhrzeigersinn abrollt
-	\item Faden in den Schlitz und unter Metallfeder führen
-	\item Faden ca. 5cm aus der Spule herausziehen
-	\item Hebel an Spulenkapsel nach hinten ziehen, damit Spule nicht herausfallen kann und wieder vollständig in Greifer einsetzen
-	\item Greiferabdeckung wieder nach oben klappen
-\end{enumerate}
-
-\subsection{Unterfaden aufspulen}
-\textbf{Ausführliche Anleitung S.34 oder zeigen lassen}
-\begin{enumerate}
-	\item passende Spulen verwenden
-	\item Spule auf den Spuler drücken
-	\item Faden nach Anleitung einfädeln und einige Male per Hand um die Spule wickeln oder durch das Loch in der Spule fädeln
-	\item Spulenhebel gegen die Spule drücken \pfeil Spule dreht sich, bis sie voll ist oder manuell Hebel wegdrücken
-	\item Faden abschneiden, Spule abnehmen
-\end{enumerate}
-
-\subsection{Vorbereitungen Maschine}
-\begin{enumerate}
-	\item Nähmaschine ausschalten oder ausgeschaltet lassen
-	\item Stickfuß anbringen (siehe oben)
-	\item Sticknadel (Embroidery) einsetzen
-	\item Zubehörfach entfernen
-	\item Abdeckung zum Anschluss des Stickaggregats öffnen, Transporteur versenken (siehe oben)
-	\item Stickaggregat anbringen und einrasten
-	\item Maschine mit USB Kabel mit Laptop verbinden und Laptop hochfahren
-	\item Unterfaden farblich passendes normales Nähgarn
-	\item Oberfaden Stickgarn je nach Farbwunsch (Einfädeln siehe oben) \pfeil \textcolor{red}{Wichtig: darauf achten, dass der Faden richtig eingerastet ist und unter Spannung steht}
-\end{enumerate}
-
-\subsection{Vorbereitungen Stoff, Einspannen}
-\begin{itemize}
-	\item Entscheidung Größe des Designs: kleiner Stickrahmen oder großer Stickrahmen
-	\item Rahmenstellschraube öffnen und Rahmen auseinandernehmen
-	\item normalerweise bei \textbf{nicht dehnbaren} Stoffen:
+	\subsection{Aufstellen und Einschalten}
 	\begin{itemize}
-		\item Stickvlies etwas größer als den gewählten Rahmen ausschneiden
-		\item Vlies unten und Stoff darüber zwischen die beiden Rahmenteile legen (Beim großen Rahmen müssen die beiden Pfeile aufeinandertreffen!)
-		\item Stoff fest einspannen, dazu am Stoff ziehen (Vorsicht bei Vlies, dieses kann reißen)
-		\item beim Klopfen auf den Stoff soll ein Geräusch ähnlich einer Trommel sein
-		\item \textcolor{red}{Achtung, dass der Stoff richtig positioniert ist!} 
+		\item Die Maschine steht auf einem stabilen Tisch und wackelt nicht. Wackelt sie, die Füße nachstellen (Betreuer fragen).
+		\item Hinter und neben der Maschine Platz lassen, der Stickarm fährt mit dem Rahmen weit nach hinten und zur Seite. Nichts in den Bewegungsbereich legen.
+		\item Mit dem Netzschalter rechts einschalten. Der Stickarm fährt in seine Grundstellung, dabei Hände weg. Nach dem Ausschalten einige Sekunden warten, bevor du wieder einschaltest.
 	\end{itemize}
-\end{itemize} 
 
+	\subsection{Nadel prüfen und wechseln}
+	\label{sec:nadel}
+	Eine verbogene oder stumpfe Nadel kann beim Sticken abbrechen, den Greifer beschädigen oder den automatischen Einfädler verbiegen. Die Maschine braucht \textbf{Flachkolben-Sticknadeln} (siehe Tabelle oben). \textbf{Verwende nur Nadeln aus dem FabLab} oder kläre andere Nadeln vorher mit einem Betreuer.
 
-\subsection{Vliesauswahl}
-\begin{itemize}
-	\item \textbf{normales Stickvlies, reißbar:} \textbf{immer} bei nicht dehnbaren Stoffen unter den Stoff in den Rahmen einspannen, kann nach dem Sticken abgerissen werden
-	\item \textbf{normales Stickvlies, nicht reißbar, fest:} bei gewünschter extra Stabilität bei nicht dehnbaren Stoffen, muss nach dem Sticken zurückgeschnitten werden
-	\item \textbf{Bügelvlies, nicht reißbar:} kann bei dehnbaren Stoffen verwendet werden oder wenn Vlies nicht den ganzen Rahmen ausfüllen soll, Vlies vor dem Einspannen des Stoffes in den Stickrahmen mit einem Bügeleisen auf den Stoff aufbringen. Bügelanleitung (\textcolor{red}{Temperatur!}) des Vlieses und des zu bestickenden Stoffes beachten  
-	\item \textbf{Klebevlies, reißbar:} kann bei dehnbaren Stoffen verwendet werden oder bei Stoffstücken kleiner als der Rahmen, nur Vlies einspannen, mit Stecknadel vorsichtig die Folie anritzen (nicht das eigentliche Vlies) und abziehen, Stoff positionieren und glatt aufkleben, kann nach dem Sticken abgerissen werden
-	\item \textbf{Stickvlies bzw. -folie wasserlöslich:} \textbf{nur} Nach dem Sticken kann Vlies/Folie durch Befeuchten aufgelöst werden, z.\,B. Sticken von Spitze
-	Auch bei voluminösen Stoffen (z.\,B. Frottee, Fleece): hier werden 3 Schichten eingespannt: Vlies, Stoff, Stickfolie, dann wird gestickt und die oberste Schicht Folie nach dem Sticken durch Befeuchten entfernt
-so wird das Einsinken der Fäden in den Stoff verhindert!
-\end{itemize}
+	\begin{center}
+		\input{zeichnungen/nadel}
+		\captionof{figure}{Sticknadel: links die Einbaulage mit der abgeflachten Seite nach hinten, rechts die Prüfung auf einer ebenen Fläche (gerade und verbogene Nadel).}
+		\label{abb:nadel}
+	\end{center}
 
-\subsection{Stickmuster auf Maschine laden}
-\begin{itemize}
-	\item
-\end{itemize}
+	\textbf{Prüfen:} Die Nadel mit der abgeflachten Seite des Kolbens auf eine ebene Fläche legen. Bleibt der Spalt zwischen Nadel und Fläche über die ganze Länge gleich, ist sie gerade (Abb.~\ref{abb:nadel}).
 
-\subsection{Sticken}
-\textcolor{red}{Immer Maschine beobachten und \textbf{Stop} drücken, falls irgendetwas untypisch ist!}
+	\textbf{Wechseln:}
+	\begin{enumerate}
+		\item Maschine ausschalten.
+		\item Die Nadel mit der linken Hand festhalten und die Nadelschraube mit dem Sechskantschlüssel aus dem Zubehör etwas lösen (gegen den Uhrzeigersinn). Nadel nach unten herausnehmen, nicht herunterfallen lassen.
+		\item Die neue Nadel mit der \textbf{abgeflachten Seite nach hinten} durch die Öffnung im Stickfuß führen und bis zum Anschlag nach oben schieben. Das Nadelwechsel-Werkzeug aus dem Zubehör hilft dabei.
+		\item Nadel festhalten und die Schraube festziehen: fest, aber ohne Gewalt.
+	\end{enumerate}
+	Sitzt die Nadel nicht ganz oben, trifft der automatische Einfädler das Nadelöhr nicht und kann sich verbiegen.
 
-\vspace{1em}
+	\subsection{Greifer ölen}
+	\label{sec:oelen}
+	Der Greifer bekommt \textbf{an jedem Sticktag vor dem ersten Sticken einen Tropfen Öl}. Ist die Greiferbahn trocken, reißt der Faden öfter und der Greifer wird laut.
+	\begin{enumerate}
+		\item Maschine ausschalten.
+		\item Greiferabdeckung nach vorn öffnen und die Spulenkapsel herausnehmen (Abschnitt~\ref{sec:spule}).
+		\item Das Handrad in Richtung Display in die Stellung drehen, die an der Maschine mit \enquote{U} markiert ist. Dann liegt die Ölstelle der Greiferbahn frei.
+		\item Einen Tropfen Nähmaschinenöl aus der Ölflasche auf die Greiferbahn geben. Nur dieses Öl verwenden. Mehr ist nicht besser: Überschüssiges Öl tropft sonst auf den Stoff, also mit einem Lappen abwischen.
+		\item Spulenkapsel wieder einsetzen und die Abdeckung schließen.
+	\end{enumerate}
 
-\begin{itemize}
-	\item Nähfuß anheben
-	\item Nadel in höchste Position
-	\item Stickrahmen einlegen: Hebel am Stickfuß nach oben drücken und Rahmen in die Führung schieben, sodass der Stoff oben liegt und sich nicht verhängen kann, muss einrasten
-	\item Nähfuß senken
-	\item Faden leicht festhalten, damit er bei den ersten Stichen nicht durchrutscht
-	\item Speed ungefähr in der Mitte, Start drücken, wenige Stiche sticken lassen, Stop drücken, Faden abschneiden, Start drücken
-	\item Maschine stickt alles einer Farbe selbstständig und regelt die Geschwindigkeit und schneidet am Ende eines Blocks den Faden selbstständig ab
-\end{itemize}
+	\subsection{Unterfaden aufspulen}
+	Als Unterfaden gibt es \textbf{weißes und schwarzes Garn auf großen Konen} sowie fertig gewickelte Spulen. Bitte dafür nicht das teurere farbige Stickgarn verwenden, der Unterfaden ist auf der Vorderseite ohnehin nicht zu sehen.
 
+	Zum Aufspulen nur die \textbf{Metallspulen} der Maschine verwenden. Der Weg des Fadens ist an der Fadenführung oben auf der Maschine mit eingekreisten Zahlen markiert.
+	\begin{enumerate}
+		\item Maschine einschalten.
+		\item Leere Metallspule auf die Spulerwelle stecken, die Kerbe der Spule auf die Feder der Welle.
+		\item Unterfaden auf einen der linken Garnrollenstifte setzen und die Garnrollenkappe fest aufdrücken.
+		\item Den Faden den Zahlen nach durch die Fadenführung führen und dabei richtig um die Spannungsscheibe des Spulers legen.
+		\item Den Faden vier- bis fünfmal im Uhrzeigersinn um die Spule wickeln und das Ende durch den Schlitz in der Spulerplatte ziehen. Der Schlitz schneidet den Faden ab.
+		\item Den Spulerschalter nach links drücken, bis er einrastet, und das Aufspulen am Display starten.
+		\item Dabeibleiben. Läuft der Faden falsch auf, sofort am Display anhalten. Ist die Spule voll, stoppt der Spuler von selbst.
+		\item Faden am Fadenabschneider abschneiden und die Spule abnehmen, ohne an der Spulerplatte zu ziehen.
+	\end{enumerate}
+	Eine unregelmäßig oder zu locker gewickelte Spule führt zu falscher Fadenspannung und im schlimmsten Fall zum Nadelbruch.
 
-\subsection{Nach dem Sticken}
-\begin{itemize}
-	\item Nähfuß anheben
-	\item Hebel links vom Rahmen am Stickaggregat zum Lösen des Rahmens drücken
-	\item Rahmen nach vorne schieben und Stickfuß am Hebel weiter anheben, damit er über den Rahmen kommt
-	\item Stoff aus Rahmen lösen und Vlies/Folie entfernen
-	\item Stickaggregat mit Hebel an der Vorderseite lösen und entfernen
-	\item Transporteur wieder anheben
-	\item Abdeckung Stecker schließen
-	\item normales Zubehörfach anbringen
-	\item Nadel herausnehmen
-	\item benutzte Nadel mit Lackstift markieren
-\end{itemize}
+	\subsection{Spule einsetzen}
+	\label{sec:spule}
+	Bevor du einen großen Rahmen bestickst, prüfe, ob genug Unterfaden auf der Spule ist. Die Maschine warnt nicht, bevor der Unterfaden ausgeht, sie hält erst an, wenn er fehlt.
+	\begin{enumerate}
+		\item Maschine ausschalten. Greiferabdeckung vorsichtig nach vorn herunterklappen.
+		\item Den Fadenaufnehmer ein Stück zu dir ziehen. Er lässt sich nur wenig bewegen, nicht weiter ziehen.
+		\item Die Verriegelung an der Spulenkapsel nach vorn ziehen, festhalten und die Kapsel herausziehen. Alte Spule herausnehmen und die Kapsel mit dem Pinsel von Fusseln befreien.
+		\item Spule so in die Kapsel legen, dass sich der Faden beim Abziehen \textbf{im Uhrzeigersinn} abwickelt (Blick auf die offene Seite, Abb.~\ref{abb:spule}).
+		\item Den Faden durch den Schlitz und unter der Spannungsfeder durchziehen, bis etwa 5\,cm herausstehen.
+		\item Die Spannung des Unterfadens an der Spulenkapsel (kleine Schraube an der Feder) wird \textbf{nur von Betreuern} verstellt.
+		\item Kapsel gerade in den Greifer schieben, dabei die Zunge der Kapsel auf die Kerbe im Greifer ausrichten, bis sie einrastet.
+		\item Greiferabdeckung schließen.
+	\end{enumerate}
 
-% schoenere Darstellung
-\newpage
-\ccLicense{stickmaschine-einweisung}{Einweisung Stickmaschine}
+	\begin{center}
+		\input{zeichnungen/spule}
+		\captionof{figure}{Spule in der Spulenkapsel, Blick auf die offene Seite: links richtig eingelegt (Faden wickelt im Uhrzeigersinn ab), rechts falsch herum.}
+		\label{abb:spule}
+	\end{center}
+
+	\subsection{Oberfaden einfädeln}
+	Den Oberfaden immer \textbf{genau} wie beschrieben einlegen. Ein falsch eingelegter Faden reißt, verhakt sich oder verbiegt die Nadel. Der Weg ist zusätzlich als Linie auf der Maschine aufgedruckt. Die Nummern beziehen sich auf Abb.~\ref{abb:fadenweg}.
+
+	Bei Metallgarn oder anderem glatten Garn, das von der Rolle rutscht, ein Garnrollennetz über die Rolle ziehen (zu langes Netz einmal umschlagen). Danach kann es nötig sein, die Fadenspannung nachzustellen.
+
+	\begin{enumerate}
+		\item Garnrolle auf einen der vier Garnrollenstifte setzen, Garnrollenkappe fest aufdrücken. Kleine Rollen bekommen vorher die Filzscheibe untergelegt. Den Faden \textbf{von hinten nach vorn} durch das Loch in der Fadenführung direkt über der Rolle führen~\teil{1}.
+		\item Den Faden durch das vordere Loch der Fadenführung zu dir ziehen~\teil{2}.
+		\item Faden mit beiden Händen halten, \textbf{von links unter der Führungsplatte} durchziehen und einmal \textbf{im Uhrzeigersinn} um den Fadenspanner legen~\teil{3}.
+		\item Wieder von links unter der zweiten Führungsplatte durch die mittlere Fadenführung~\teil{4}.
+		\item Im rechten Schlitz nach unten und unten herum~\teil{5}.
+		\item Im linken Schlitz nach oben und \textbf{von rechts} durch das Loch im Fadenhebel~\teil{6}.
+		\item Im linken Schlitz wieder nach unten und durch das Loch in der Abdeckung~\teil{7}.
+		\item Hinter die Fadenführung an der Nadelstange einhängen, das Nadelwechsel-Werkzeug hilft dabei~\teil{8}.
+		\item Nadel mit dem automatischen Einfädler einfädeln~\teil{9}, siehe unten.
+	\end{enumerate}
+
+	\begin{center}
+		\input{zeichnungen/fadenweg}
+		\captionof{figure}{Weg des Oberfadens von der Garnrolle bis zur Nadel, schematisch von vorn. Die Nummern entsprechen den Schritten im Text.}
+		\label{abb:fadenweg}
+	\end{center}
+
+	\textbf{Nadel einfädeln mit dem automatischen Einfädler:}
+	\begin{enumerate}
+		\item Taste \enquote{Automatisches Einfädeln} (rechts neben dem Fadenabschneider~\teil{4}) drücken. Der Haken des Einfädlers fährt durch das Nadelöhr.
+		\item Etwa 15\,cm Faden herausziehen und \textbf{von rechts unter die Gabel} des Einfädlers legen, so dass der Haken ihn greift.
+		\item Den Faden unter die Führung am Stickfuß legen, durch die Kerbe.
+		\item Den Faden fest durch die Nut im Fadenabschneider ziehen. Er wird dabei auf die richtige Länge gekürzt und gehalten.
+		\item Taste \enquote{Automatisches Einfädeln} noch einmal drücken. Der Einfädler zieht den Faden durchs Öhr und fährt zurück.
+		\item Kontrollieren: Läuft der Faden noch richtig um den Fadenspanner~\teil{3}?
+	\end{enumerate}
+	Während der Einfädler im Nadelöhr steckt, \textbf{nicht am Handrad drehen}. Klappt das Einfädeln nicht, erst eine neue Nadel probieren. Ist der Haken des Einfädlers verbogen, einem Betreuer Bescheid geben.
+
+	\subsection{Garnfarbe wechseln}
+	Ist der Faden bereits richtig eingefädelt, geht ein Farbwechsel schneller:
+	\begin{enumerate}
+		\item Den alten Faden zwischen Garnrolle und Fadenführung abschneiden und die Rolle tauschen.
+		\item Den Anfang des neuen Fadens mit dem Ende des alten verknoten.
+		\item Den alten Faden direkt über der Nadel herausziehen, bis der Knoten kurz vor der Nadel ist. Den Knoten \textbf{nicht} durch das Nadelöhr ziehen, sondern vorher abschneiden.
+		\item Die Nadel mit dem automatischen Einfädler neu einfädeln.
+	\end{enumerate}
+
+	\section{Stoff einspannen}
+
+	Die Maschine bestickt Stoffe bis etwa \textbf{1\,mm Dicke}. Dickere Stoffe und viele übereinanderliegende Stiche verbiegen oder brechen die Nadel.
+
+	\subsection{Rahmen wählen}
+	\label{sec:rahmen}
+	Immer den \textbf{kleinsten Rahmen} wählen, in den das Muster passt. In einem zu großen Rahmen gibt der Stoff nach, das Muster wird ungleichmäßig oder der Stoff wirft Falten. Das Display zeigt, welche Rahmen für das gewählte Muster passen.
+
+	\begin{center}
+		\small
+		\renewcommand{\arraystretch}{1.25}
+		\begin{tabular}{|l|l|l|}
+			\hline
+			\textbf{Rahmen} & \textbf{Stickfläche (H $\times$ B)} & \textbf{Stickrahmenhalter} \\ \hline
+			extragroß & $200 \times 200$\,mm & a \\ \hline
+			groß & $130 \times 180$\,mm & a \\ \hline
+			mittel & $100 \times 100$\,mm & a \\ \hline
+			klein & $40 \times 60$\,mm & a \\ \hline
+			Kompaktrahmen & $41 \times 70$, $50 \times 50$, $38 \times 44$, $33 \times 75$\,mm & e \\ \hline
+			Kappenrahmen & $60 \times 130$\,mm & Kappenrahmen-Antrieb (Abschnitt~\ref{sec:kappen}) \\ \hline
+		\end{tabular}
+	\end{center}
+	Welche Rahmen gerade da sind, siehst du im Zubehör der Maschine. Für Kompaktrahmen wird statt des Stickrahmenhalters~a der Halter~e angeschraubt, dabei hilft ein Betreuer.
+
+	\subsection{Vlies auswählen}
+	\label{sec:vlies}
+	\textbf{Gestickt wird immer mit Vlies.} Vlies (Unterlegmaterial) stützt den Stoff beim Sticken. Ohne Vlies zieht sich die Stickerei zusammen, wird wellig, und die Nadel kann sich verbiegen. Das Vlies muss größer als der Rahmen sein, damit es an allen Seiten mit eingeklemmt wird.
+
+	\begin{itemize}
+		\item \textbf{Reißvlies:} Standard bei nicht dehnbaren Stoffen. Wird unter dem Stoff mit eingespannt und nach dem Sticken abgerissen.
+		\item \textbf{Schneidvlies (fest, nicht reißbar):} für zusätzliche Stabilität, z.\,B. bei dichten Mustern und bei Poloshirts. Wird nach dem Sticken mit der Schere zurückgeschnitten.
+		\item \textbf{Bügelvlies:} für dehnbare Stoffe oder wenn das Vlies nicht den ganzen Rahmen ausfüllen soll. Vor dem Einspannen von links auf den Stoff bügeln. Die Temperaturangaben von Vlies \textbf{und} Stoff beachten.
+		\item \textbf{Klebevlies (reißbar):} für dehnbare Stoffe und für Stoffstücke, die kleiner als der Rahmen sind. Nur das Vlies einspannen, die Schutzfolie mit einer Stecknadel anritzen (nicht das Vlies) und abziehen, den Stoff glatt aufkleben. Nach dem Sticken abreißen.
+		\item \textbf{Wasserlösliches Vlies bzw.\ Folie:} löst sich nach dem Sticken in Wasser auf. Zum Sticken von Spitze und als \textbf{Obervlies} bei Stoffen mit Flor (Frottee, Fleece, Cord): Dann werden drei Lagen eingespannt (Vlies, Stoff, Folie obendrauf). Die Folie verhindert, dass die Stiche im Flor versinken.
+	\end{itemize}
+
+	\subsection{Einspannen}
+	\begin{enumerate}
+		\item Schraube am Außenrahmen lösen und den Innenrahmen herausnehmen.
+		\item Außenrahmen auf eine ebene Fläche legen. Vlies und darüber den Stoff mit der \textbf{rechten Seite nach oben} auflegen.
+		\item Innenrahmen von oben eindrücken, zuerst an der Ecke mit der Schraube, dann an den übrigen Ecken. Dabei den Stoff jeweils leicht nach außen glattziehen.
+		\item Schraube leicht anziehen, Stoff an den Ecken nachziehen, bis er glatt und straff ist, dann die Schraube mit dem großen Schraubendreher aus dem Zubehör festziehen.
+		\item Prüfen: Beim Klopfen klingt der Stoff wie eine \textbf{Trommel}. Keine Falten in Stoff und Vlies. Der Innenrahmen sitzt ganz im Außenrahmen, seine Unterseite liegt nicht höher als die des Außenrahmens.
+		\item Prüfen, ob das Motiv an der richtigen Stelle des Stoffes liegt. Die Mittelmarkierungen am Rahmen helfen beim Ausrichten.
+	\end{enumerate}
+	Den Stoff nicht überdehnen. Ein zu stark gezogener Stoff zieht sich nach dem Ausspannen zusammen und wirft Falten um das Motiv. Wie Stoff und Vlies im Rahmen liegen, zeigt Abb.~\ref{abb:einspannen}, einen fertig bestickten Rahmen Abb.~\ref{abb:rahmen}.
+
+	\begin{center}
+		\input{zeichnungen/einspannen}
+		\captionof{figure}{Schnitt durch eine Rahmenseite: Stoff und Vlies liegen zwischen Außen- und Innenrahmen und an der Unterseite flach unter der Nadel.}
+		\label{abb:einspannen}
+	\end{center}
+
+	\begin{center}
+		\includegraphics[width=0.75\textwidth]{bilder/stickrahmen-mittel.jpg}
+		\captionof{figure}{Mittlerer Rahmen ($100 \times 100$\,mm) mit eingespanntem Filz und Reißvlies nach dem Sticken. Rechts und links die Laschen, mit denen der Rahmen im Stickrahmenhalter einrastet.}
+		\label{abb:rahmen}
+	\end{center}
+
+	\subsection{Rahmen in die Maschine einsetzen}
+	Beim Einsetzen muss die Taste Start/Stopp~\teil{2} \textbf{rot} leuchten, damit die Maschine nicht versehentlich anläuft.
+	\begin{enumerate}
+		\item Die beiden Rändelschrauben~\teil{6} am Stickrahmenhalter höchstens ein bis zwei Umdrehungen lösen, nicht herausdrehen.
+		\item Den linken Arm~\teil{7} verschieben, bis die rechte Schraube auf der Markierung für deine Rahmengröße steht. Beide Schrauben wieder fest anziehen, sonst erkennt die Maschine die Rahmengröße falsch.
+		\item Rahmen gerade halten, \textbf{Innenrahmen oben}, und gleichzeitig rechts und links in die Klemmen des Halters schieben, bis er einrastet. Die Stifte des Halters müssen in Loch und Schlitz der Laschen~\teil{8} sitzen.
+		\item Darauf achten, dass der Stoff unter dem Rahmen frei liegt und sich nicht unter dem Stickarm verfängt. Große Stoffteile seitlich zusammenlegen oder abstützen.
+	\end{enumerate}
+
+	\section{Sticken}
+
+	\subsection{Muster laden und platzieren}
+	\begin{enumerate}
+		\item USB-Stick an der rechten Seite der Maschine einstecken und am Display das Muster vom Stick wählen. Alternativ ein Motiv oder eine Schrift aus der Maschine nehmen.
+		\item Am Display bei Bedarf Position, Größe, Drehung und Spiegelung anpassen. Größe nur wenig ändern: Beim Skalieren am Display ändert sich die Stichdichte.
+		\item Die Anzeige der Stichzahl und der Garnfarben in der Reihenfolge des Stickens ansehen. Die Farben vorher bereitlegen.
+	\end{enumerate}
+
+	\subsection{Stickbereich prüfen}
+	Am Display den Stickbereich abfahren lassen. Der Rahmen fährt dabei den Umriss des Musters ab. Beobachte dabei:
+	\begin{itemize}
+		\item Liegt das Muster an der richtigen Stelle?
+		\item Stößt der Rahmen nirgends an den Stickfuß oder an Gegenstände?
+	\end{itemize}
+
+	\subsection{Starten}
+	\begin{enumerate}
+		\item Oberfaden der ersten Farbe einfädeln.
+		\item Am Display die Freigabe (Schloss-Symbol) antippen. Start/Stopp~\teil{2} blinkt grün.
+		\item Innerhalb von etwa 10 Sekunden Start/Stopp drücken, sonst sperrt sich die Maschine wieder.
+		\item Die Maschine senkt den Stickfuß und stickt die erste Farbe. Anfang und Ende des Fadens schneidet sie selbst ab (Abb.~\ref{abb:sticken}).
+		\item Nach etwa 100 Stichen kurz anhalten und die Fadenspannung prüfen (Abschnitt~\ref{sec:spannung}). Ein Probestück auf einem Rest desselben Stoffes ist noch besser.
+		\item Nach jeder Farbe hält die Maschine an. Neue Farbe einfädeln, entsperren, starten.
+	\end{enumerate}
+
+	Die Geschwindigkeit lässt sich am Display auch während des Stickens ändern. Langsamer sticken bei dünnen, dicken oder schweren Stoffen und bei Metallgarn.
+
+	\subsection{Anhalten und Probleme}
+	\begin{itemize}
+		\item \textbf{Anhalten:} Start/Stopp drücken. Die Fäden werden dabei nicht abgeschnitten. Zum Weitersticken Oberfaden prüfen, entsperren, Start/Stopp drücken.
+		\item \textbf{Fadenriss oder Unterfaden leer:} Die Maschine hält von selbst an. Faden neu einfädeln bzw.\ Spule wechseln, am Display einige Stiche zurückgehen, damit die Lücke überstickt wird, dann weitersticken.
+		\item \textbf{Vor dem Ausschalten} mitten im Muster erst die Fäden mit dem Fadenabschneider~\teil{4} abschneiden. Nach dem Einschalten kann die Maschine an der Stelle weitersticken.
+	\end{itemize}
+
+	\begin{center}
+		\includegraphics[width=0.75\textwidth]{bilder/sticken.jpg}
+		\captionof{figure}{Die Maschine stickt im mittleren Rahmen die Umrandung eines Aufnähers. Der Stickfuß drückt den Stoff an der Nadel nieder.}
+		\label{abb:sticken}
+	\end{center}
+
+	\subsection{Fadenspannung prüfen}
+	\label{sec:spannung}
+	Die Fadenspannung siehst du am besten auf der \textbf{Rückseite} einer Satinstichraupe (dichte Zickzackstiche, z.\,B. bei einem Buchstaben): Richtig ist es, wenn in der Mitte etwa \textbf{ein Drittel} der Breite weißer Unterfaden zu sehen ist und rechts und links der Oberfaden (Abb.~\ref{abb:fadenspannung}).
+
+	\begin{center}
+		\input{zeichnungen/fadenspannung}
+		\captionof{figure}{Rückseite einer Satinstichraupe: richtige Fadenspannung (links), Oberfaden zu straff (Mitte) und zu locker (rechts).}
+		\label{abb:fadenspannung}
+	\end{center}
+
+	\begin{itemize}
+		\item \textbf{Zu viel Unterfaden auf der Rückseite}, Unterfaden scheint vorn durch: Oberfaden zu straff. Fadenspannungsknopf etwas gegen den Uhrzeigersinn drehen.
+		\item \textbf{Kaum oder kein Unterfaden auf der Rückseite}, Schlaufen: Oberfaden zu locker. Fadenspannungsknopf etwas im Uhrzeigersinn drehen.
+	\end{itemize}
+	Bevor du die Spannung verstellst, prüfe den Fadenweg: Meist liegt der Faden nicht richtig im Fadenspanner. An der Spannung der Spulenkapsel wird nichts verändert, das machen nur Betreuer.
+
+	\subsection{Nach dem Sticken}
+	\begin{enumerate}
+		\item Warten, bis die Maschine fertig ist und Start/Stopp rot leuchtet.
+		\item Rahmen mit beiden Händen aus den Klemmen des Halters nach vorn herausziehen, ohne an den Stickfuß zu stoßen.
+		\item Schraube lösen, Stoff aus dem Rahmen nehmen, Vlies abreißen bzw.\ zurückschneiden, Sprungstiche abschneiden.
+		\item Stichzahl für die Abrechnung notieren.
+		\item Maschine ausschalten. Leere Spulen, Garn, Rahmen und Werkzeug ins Zubehör zurückräumen, Fusseln und Fadenreste entfernen.
+		\item Staubschutzhaube auf die Maschine setzen.
+		\item Schäden, verbogene Nadeln und leeres Material einem Betreuer melden.
+	\end{enumerate}
+
+	\section{Kappen besticken mit dem Kappenrahmen}
+	\label{sec:kappen}
+
+	Mit dem Kappenrahmen lässt sich die Vorderseite von Kappen (Caps) besticken. Die Kappe wird dabei nicht flach gedrückt, sondern in ihrer gewölbten Form gehalten. \textbf{Sprich dein Kappenprojekt vorher mit einem Betreuer ab.} Nicht jede Kappe eignet sich, und die Stickfläche ist deutlich kleiner als beim flachen Rahmen.
+
+	\subsection{Zubehör}
+	\begin{itemize}
+		\item \textbf{Kappenrahmen} mit Klemmband, Schnappverschluss, zwei Clips und Schirmhalter. Stickfläche $60 \times 130$\,mm (H $\times$ B).
+		\item \textbf{Kappenrahmen-Antrieb:} ersetzt den Stickrahmenhalter am Stickarm. Er umgreift mit einem Ring das Maschinenbett, und der Kappenrahmen rastet darauf ein.
+		\item \textbf{Montagevorrichtung:} wird an einen Tisch geklemmt, auf ihr wird die Kappe in den Rahmen gespannt.
+		\item \textbf{Stichplatten-Distanzstück} aus dem Zubehör der Maschine: wird beim Kappensticken auf die Stichplatte gesetzt.
+	\end{itemize}
+
+	\subsection{Welche Kappen gehen?}
+	\begin{itemize}
+		\item Gut: Kappen mit fester, versteifter Front (\enquote{structured}), Front aus Baumwolle oder Baumwoll-Polyester-Mischung, mit Mittelnaht oder ungeteilter Front.
+		\item Schwierig bis ungeeignet: weiche Kappen ohne Versteifung, Fronten unter 5\,cm Höhe (Sonnenblende), Kinderkappen, Schirme länger als 8\,cm, Stretch, Schaumstoff, Nylon, Wildleder.
+		\item Kappen ohne Mittelnaht vorher mit Schneiderkreide in der Mitte markieren.
+	\end{itemize}
+
+	\subsection{Umbau auf den Kappenrahmen}
+	\begin{enumerate}
+		\item Flachen Rahmen abnehmen. Die beiden Rändelschrauben, die den Stickrahmenhalter am Stickarm halten, herausdrehen und den Halter abnehmen. Die Schrauben bleiben am Halter.
+		\item Am Kappenrahmen-Antrieb die beiden oberen Rändelschrauben aus der Parkposition herausdrehen und beiseitelegen, die beiden unteren um etwa vier Umdrehungen lösen.
+		\item Den Antrieb mit dem Ring über das Maschinenbett schieben, ohne an den Stickfuß zu stoßen.
+		\item Die unteren Rändelschrauben in die Kerben des Stickarms führen, die Grundplatte des Antriebs auf die Rahmenplatte des Stickarms legen, so dass deren Stifte in den Löchern der Grundplatte sitzen.
+		\item Die oberen Rändelschrauben in die äußeren Löcher der Grundplatte setzen und anziehen.
+		\item Den Antrieb ganz zur Maschine hin schieben und die unteren Rändelschrauben festziehen.
+		\item Das Stichplatten-Distanzstück auf die Stichplatte setzen.
+	\end{enumerate}
+	Höhe von Ring und Winkel am Antrieb sind auf unsere Maschine eingestellt. Die Inbusschrauben daran \textbf{nicht} verstellen.
+
+	\subsection{Kappe einspannen}
+	\begin{enumerate}
+		\item Montagevorrichtung mit ihrer Klemme fest an einen stabilen Tisch schrauben (Tischplatte 9 bis 38\,mm dick). Sie darf nicht wackeln.
+		\item Kappenrahmen auf die Montagevorrichtung schieben, bis die beiden Halter einrasten. Die Kerbe des Rahmens sitzt dabei auf der Führung der Vorrichtung.
+		\item Schnappverschluss öffnen, Klemmband und Schirmhalter aufklappen.
+		\item Ein Stück Reißvlies auf die Stifte des Rahmens drücken, so dass es fest sitzt.
+		\item Das Schweißband innen in der Kappe nach außen klappen. Kappe mit beiden Händen über den Rahmen ziehen, bis der Schirmansatz an der Kante des unteren Rahmens liegt. Die Mitte der Kappe auf die Mittellinie des Schweißbandhalters ausrichten und das Schweißband darunterschieben.
+		\item Die Mittelnaht der Kappe auf die Kerbe der Montagevorrichtung ausrichten und das Schweißband in die Kerbe des Rahmens legen.
+		\item Klemmband schließen, so dass der Schirm zwischen innerem und äußerem Band liegt. Die \textbf{Zähne des Klemmbands genau an den Schirmansatz} setzen, auf beiden Seiten (Abb.~\ref{abb:kappenrahmen}). Dann den Schnappverschluss schließen.
+		\item Die Kappe auf jeder Seite von der Mitte nach außen glattziehen und mit den Clips festklemmen.
+		\item Schirmhalter ganz hochziehen, über den Schirm klappen und absenken, so dass seine Mittellinie zu sehen ist.
+		\item Rahmen mit der Kappe abnehmen: beide Halter der Vorrichtung mit den Daumen drücken und den Rahmen abziehen.
+	\end{enumerate}
+	Lässt sich das Klemmband bei dickem Stoff nicht schließen oder sitzt die Kappe bei dünnem Stoff zu locker, hilft ein Betreuer beim Nachstellen des Klemmbands.
+
+	\begin{center}
+		\input{zeichnungen/kappenrahmen}
+		\captionof{figure}{Kappe im Kappenrahmen, schematisch von vorn: Klemmband am Schirmansatz, Clips, Schirmhalter und Stickbereich.}
+		\label{abb:kappenrahmen}
+	\end{center}
+
+	\subsection{Kappenrahmen einsetzen und sticken}
+	\begin{enumerate}
+		\item Den Rahmen \textbf{seitlich gedreht} unter dem Stickfuß einführen, damit der Schirm nicht an die Maschine stößt.
+		\item Rahmen drehen, bis die Stickfläche nach oben zeigt, den Ring des Rahmens auf den Ring des Antriebs setzen.
+		\item Rahmen etwas nach rechts und links bewegen, bis die Kerbe des Rahmens auf die Führung des Antriebs passt, und einrasten. Prüfen, dass \textbf{alle Halter} des Antriebs fest in den Löchern des Rahmens sitzen.
+		\item Stickbereich am Display abfahren lassen und beobachten, ob der Schirm irgendwo anstößt.
+		\item Sticken wie gewohnt. Mit Kappenrahmen stickt die Maschine höchstens 600 Stiche pro Minute, eingestellt sind 400. Langsamer ist bei Kappen meist besser.
+	\end{enumerate}
+
+	\textbf{Tipps für Kappenmuster} (in Hatch beachten):
+	\begin{itemize}
+		\item Mit Unterlagestichen arbeiten.
+		\item Von der \textbf{Mitte nach außen} sticken lassen, nicht von einem Ende zum anderen, sonst schiebt sich der Stoff zusammen. Bei Schriftzügen am Display die Buchstaben in dieser Reihenfolge setzen.
+		\item Satinstich-Umrandungen mindestens 2\,mm breit und mindestens 1\,mm über die Fläche gehend. Keine langen Sprungstiche.
+		\item Höchstens vier Lagen Stiche übereinander.
+	\end{itemize}
+
+	\subsection{Zurückbauen}
+	\begin{enumerate}
+		\item Kappenrahmen abnehmen: die beiden Halter am Fuß des Rahmens mit den Daumen drücken und den Rahmen seitlich gedreht herausziehen.
+		\item Schirmhalter abnehmen, Schnappverschluss öffnen, Clips abnehmen, Kappe herausnehmen.
+		\item Stichplatten-Distanzstück abnehmen.
+		\item Die unteren Rändelschrauben des Antriebs lösen, die oberen herausdrehen und den Antrieb vorsichtig abnehmen.
+		\item Die oberen Rändelschrauben wieder in die Parkposition oben am Antrieb setzen und anziehen. Dabei steht das Loch im Schweißbandhalter auf der Mitte der Führung.
+		\item Stickrahmenhalter wieder aufsetzen (Löcher auf die Stifte des Stickarms) und mit seinen beiden Rändelschrauben fest anschrauben.
+		\item Montagevorrichtung vom Tisch abnehmen, alles ins Zubehör zurückräumen.
+	\end{enumerate}
+
+	\section{Infos für Betreuer}
+
+	\subsection{Wartung}
+	\begin{itemize}
+		\item Greiferbahn: täglich vor dem Sticken einen Tropfen Öl (macht der Nutzer, Abschnitt~\ref{sec:oelen}).
+		\item Filzscheibe an der unteren Nadelstange: alle 40 bis 50 Betriebsstunden einen Tropfen Öl.
+		\item Regelmäßig mit dem Pinsel reinigen: Greifer und Spulenkapsel, den Bereich unter der Stichplatte, die Fadenführungen und die Filzscheiben im Fadenspanner. Die Spannungsscheibe hat unten einen Magneten, beim Zusammenbau nicht verkehrt herum einsetzen.
+		\item Zeigt die Maschine eine Wartungsmeldung an, ist eine Durchsicht fällig.
+		\item Die komplette Wartung mit Aufschrauben, Fetten der Führungen, Prüfen der Riemenspannung und Einstellen des Einfädlers und der Fußhöhe ist im handschriftlichen Kurz-Manual von Harald beschrieben (\texttt{fablab-data/Maschinen/Brother Stickmaschine}). Dabei immer den Netzstecker ziehen.
+		\item Software-Updates gibt es auf \url{https://support.brother.com}. Für das Update einen USB-Stick verwenden, auf dem nur die Update-Datei liegt.
+	\end{itemize}
+
+	\subsection{Kappenrahmen-Antrieb einstellen}
+	Ring und L-Winkel des Antriebs werden einmalig auf die Maschine eingestellt: Maschine einschalten, Stickarm in Grundstellung fahren lassen, ausschalten. Die beiden Schrauben am L-Winkel lösen, Winkel auf das Maschinenbett absenken und festziehen. Die vier Schrauben im Ring lösen, das Polster aus dem Zubehör zwischen Bett und Ring legen, Ring leicht andrücken, Schrauben fest anziehen und das Polster wieder entfernen. Alle Schrauben müssen fest sein.
+
+	\subsection{Typische Fehler}
+	\begin{itemize}
+		\item \textbf{Faden reißt oft:} Fadenweg falsch, Greifer nicht geölt, Nadel stumpf oder verbogen, Garn alt oder zu schwach, zu schnell gestickt.
+		\item \textbf{Einfädler greift nicht:} Nadel nicht ganz oben eingesetzt oder verdreht, Haken des Einfädlers verbogen.
+		\item \textbf{Muster ungleichmäßig oder verzogen:} Stoff zu locker eingespannt, kein oder zu schwaches Vlies, Rahmen zu groß, Rahmen oder Stickarm sind irgendwo angestoßen.
+		\item \textbf{Schlaufen oder Unterfaden auf der Vorderseite:} Fadenspannung falsch, meist liegt der Oberfaden nicht im Fadenspanner. Spule falsch herum eingelegt.
+		\item \textbf{Nadelbruch:} Stoff zu dick, zu viele Stiche übereinander, schlecht gewickelte Spule, Rahmen falsch eingerastet.
+	\end{itemize}
+
+	\section{Quellen}
+	Die Formulierungen und Zeichnungen dieser Einweisung sind eigenständig erstellt; die Zeichnungen sind mit TikZ gezeichnet und zeigen die Maschine schematisch. Sachliche Angaben (technische Daten, Arbeitsschritte, Sicherheitshinweise) beruhen auf den Anleitungen von Brother zur VR und zum Kappenrahmen sowie auf den Erfahrungen im FabLab. Maßgeblich sind die Originalanleitungen von Brother. Brother hat dieses Dokument weder geprüft noch übernimmt es dafür eine Haftung.
+
+	Die Fotos der Stickmaschine sind im FAU FabLab entstanden (Harald Kraft) und stehen wie das Dokument unter CC BY-SA 3.0; Nachweise in \texttt{bilder/QUELLEN.md}.
+
+	\newpage
+	\ccLicense{stickmaschine-einweisung}{Einweisung Stickmaschine}
 
 \end{document}

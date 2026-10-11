@@ -1,0 +1,43 @@
+% =====================================================================
+%  Sticknadel: Einbaulage (abgeflachte Seite nach hinten) und Prüfung
+%  auf einer ebenen Fläche. Schematisch, nicht maßstäblich.
+%  Selbst gezeichnet.
+% =====================================================================
+\begin{tikzpicture}[x=1mm, y=1mm, font=\scriptsize]
+  % Einbaulage, Blick von der Seite
+  \feld{-24}{-44}{52}{70}{Einbaulage (Seitenansicht)}
+  \begin{scope}
+    \draw[metall, fill=black!40] (-1.2,0) rectangle (2,14); % Kolben
+    \draw[metall, fill=black!40] (-0.7,0) -- (0.7,0) -- (0.5,-30) -- (0,-33) -- (-0.5,-30) -- cycle;   % Schaft
+    \fill[white] (0,-27) ellipse (0.25 and 1);
+    \draw[line width=1.4pt, black] (-1.2,0.3) -- (-1.2,13.7); % abgeflachte Seite
+    \draw[bewegung] (-14,12) -- (-2.5,12);
+    \txt[anchor=east]{-6,2}{-1.4,4}{abgeflachte\\Seite}
+    \node at (-14,8.5) {hinten};
+    \node at (12,8.5) {vorn};
+    \txt[anchor=west]{8,-10}{0.6,-10}{Nadel ganz bis\\zum Anschlag\\nach oben schieben}
+  \end{scope}
+
+  % Prüfung auf ebener Fläche
+  \feld{34}{-44}{86}{70}{Prüfen}
+  \begin{scope}[shift={(40,6)}]
+    \fill[black!12] (0,-2) rectangle (74,0);
+    \draw[metall, fill=black!40] (0,0) rectangle (16,3.2);
+    \draw[metall, fill=black!40] (16,1) -- (52,1.1) -- (56,0.9) -- (52,0.7) -- (16,0.7) -- cycle;
+    \draw[mass] (30,0) -- (30,0.9);
+    \draw[mass] (48,0) -- (48,0.9);
+    \pic at (68,1.5) {ok};
+    \node[anchor=north west] at (0,-3) {gleichmäßiger Abstand: Nadel ist gerade};
+  \end{scope}
+  \begin{scope}[shift={(40,-22)}]
+    \fill[black!12] (0,-2) rectangle (74,0);
+    \draw[metall, fill=black!40] (0,0) rectangle (16,3.2);
+    \draw[metall, fill=black!40] (16,1) .. controls (36,1.2) and (46,3) .. (54,5.2)
+      -- (54.5,5) .. controls (46,2.6) and (36,0.8) .. (16,0.7) -- cycle;
+    \draw[mass] (30,0) -- (30,1.1);
+    \draw[mass] (48,0) -- (48,3.4);
+    \pic at (68,1.5) {nok};
+    \node[anchor=north west] at (0,-3) {Abstand wird größer: Nadel ist verbogen};
+  \end{scope}
+  \node[anchor=north west, align=left] at (40,-36) {Abgeflachte Seite liegt auf der Fläche.};
+\end{tikzpicture}

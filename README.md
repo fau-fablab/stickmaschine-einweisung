@@ -1,17 +1,22 @@
 Stickmaschine Einweisung
 ========================
 
-:warning: __Entwurf:__ Großteils noch die Einweisung für die alte Stickmaschine, noch nicht freigegeben. :warning:
-
 Einweisung des [FAU FabLab](https://fablab.fau.de) in die [Stickmaschine](https://fablab.fau.de/tool/textilbearbeitung/stickmaschine/) Brother VR.
 
 Inhalt
 ------
 
 - Regeln und Hinweise, was du vorführen können solltest
-- Sticksoftware Hatch Embroidery 2 auf dem Sticklaptop
-- Nadeln, Greifer ölen, Ober- und Unterfaden, Stoff einspannen, Vliesauswahl
-- Sticken und Nachbereitung
+- Bedienelemente (eigenes Foto mit Nummern), Sticksoftware Hatch Embroidery 2 auf dem Sticklaptop
+- Nadel prüfen und wechseln, Greifer ölen, Unterfaden aufspulen und einsetzen, Oberfaden einfädeln
+- Rahmen und Vlies wählen, Stoff einspannen, Rahmen einsetzen
+- Sticken, Fadenspannung prüfen, Nachbereitung
+- Kappen besticken mit Kappenrahmen, Antrieb und Montagevorrichtung
+- Infos für Betreuer: Wartung, Einstellen des Kappenrahmen-Antriebs, typische Fehler
+
+Text und Zeichnungen sind in eigenen Worten bzw. selbst mit TikZ erstellt (`zeichnungen/`),
+Fotos nur mit freier Lizenz (`bilder/QUELLEN.md`). Bitte keine Texte oder Abbildungen aus den
+Brother-Anleitungen übernehmen.
 
 Download
 --------

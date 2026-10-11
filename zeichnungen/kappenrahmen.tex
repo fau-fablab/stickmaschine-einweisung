@@ -1,0 +1,35 @@
+% =====================================================================
+%  Kappe im Kappenrahmen, schematisch von vorn, nicht maßstäblich.
+%  Selbst gezeichnet.
+% =====================================================================
+\begin{tikzpicture}[x=0.9mm, y=0.9mm, font=\scriptsize]
+  % Kappe: Krone und Schirm
+  \draw[stoffstil, fill=stoff!70] (-52,0) .. controls (-50,45) and (-22,62) .. (0,62)
+    .. controls (22,62) and (50,45) .. (52,0) -- cycle;
+  \draw[stoffrand, line width=0.4pt] (0,62) -- (0,0);
+  \draw[stoffstil, fill=stoff!90!black] (-56,0) .. controls (-40,-24) and (40,-24) .. (56,0)
+    .. controls (40,-6) and (-40,-6) .. cycle;
+
+  % Stickbereich (max. 130 x 60 mm, halber Maßstab)
+  \draw[nokrot, dashed, line width=0.7pt] (-32.5,8) rectangle (32.5,38);
+  \draw[hilfslinie, dash dot] (0,-24) -- (0,70);
+
+  % Klemmband mit Zähnen am Schirmansatz
+  \draw[metall, fill=black!35] (-54,0.5) .. controls (-20,3.5) and (20,3.5) .. (54,0.5)
+    -- (54,4.5) .. controls (20,7.5) and (-20,7.5) .. (-54,4.5) -- cycle;
+  \foreach \x in {-48,-44,...,48} \fill[black!70] (\x-1,{0.5+2.6*(1-(\x/54)^2)}) -- (\x+1,{0.5+2.6*(1-(\x/54)^2)}) -- (\x,{-0.8+2.6*(1-(\x/54)^2)}) -- cycle;
+  \fill[black] (-1.8,7.4) -- (1.8,7.4) -- (0,4.8) -- cycle; % Mittelmarke
+
+  % Clips an den Seiten
+  \foreach \s in {-1,1} \draw[metall, fill=black!55, rounded corners=1] (\s*49-3,10) rectangle (\s*49+3,20);
+
+  % Schirmhalter
+  \draw[kunststoff, fill=black!25] (-24,-12) rectangle (24,-8);
+
+  \txt[anchor=east]{-62,46}{-38,38}{Stickbereich\\max. 130\,$\times$\,60\,mm}
+  \txt[anchor=east]{-62,15}{-49,15}{Clip}
+  \txt[anchor=east]{-62,-2}{-44,3}{Klemmband: Zähne\\genau am Schirmansatz}
+  \txt[anchor=west]{62,-14}{24,-10}{Schirmhalter}
+  \txt[anchor=west]{62,46}{0,52}{Mitte der Kappe\\auf die Mittelmarke}
+  \txt[anchor=west]{62,6}{1,6}{Mittelmarke}
+\end{tikzpicture}
