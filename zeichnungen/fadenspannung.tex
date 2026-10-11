@@ -1,0 +1,27 @@
+% =====================================================================
+%  Fadenspannung prüfen: Rückseite einer Satinstichraupe.
+%  Schematisch, nicht maßstäblich. Selbst gezeichnet.
+% =====================================================================
+% \raupe{x}{Breite des Unterfadens in mm (von 12)}
+\newcommand{\raupe}[2]{%
+  \fill[stoff!50] (#1-10,-4) rectangle (#1+10,34);
+  \fill[oberfaden] (#1-6,0) rectangle (#1+6,30);
+  \fill[unterfaden] (#1-#2/2,0) rectangle (#1+#2/2,30);
+  \foreach \y in {0.6,1.8,...,30} \draw[black!25, line width=0.25pt] (#1-6,\y) -- (#1+6,\y);
+  \draw[black!60, line width=0.4pt] (#1-6,0) rectangle (#1+6,30);}
+
+\begin{tikzpicture}[x=1mm, y=1mm, font=\scriptsize]
+  \raupe{0}{4}
+  \pic at (0,40) {ok};
+  \node[align=center, anchor=north] at (0,-6) {\textbf{richtig}\\Unterfaden etwa\\ein Drittel der Breite};
+
+  \raupe{45}{10}
+  \pic at (45,40) {nok};
+  \node[align=center, anchor=north] at (45,-6) {\textbf{Oberfaden zu straff}\\Unterfaden zu breit,\\vorn sichtbar};
+
+  \raupe{90}{0.6}
+  \pic at (90,40) {nok};
+  \node[align=center, anchor=north] at (90,-6) {\textbf{Oberfaden zu locker}\\kaum Unterfaden,\\Schlaufen};
+
+  \node[anchor=south] at (45,46) {Rückseite einer Satinstichraupe};
+\end{tikzpicture}

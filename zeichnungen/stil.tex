@@ -1,0 +1,54 @@
+% =====================================================================
+%  Gemeinsame Farben und Stile der Zeichnungen (TikZ, selbst erstellt)
+%  In der Präambel einbinden: \input{zeichnungen/stil}
+%  Lizenz wie das Dokument: CC BY-SA 3.0
+% =====================================================================
+\usetikzlibrary{calc,arrows.meta,decorations.pathmorphing}
+
+\definecolor{okgruen}{RGB}{46,160,67}
+\definecolor{nokrot}{RGB}{207,34,46}
+\definecolor{feld}{RGB}{244,246,248}
+\definecolor{oberfaden}{RGB}{214,40,90}    % Garnfarbe Oberfaden
+\definecolor{unterfaden}{RGB}{250,250,250} % weißer Unterfaden
+\definecolor{stoff}{RGB}{176,200,228}
+\definecolor{stoffrand}{RGB}{90,120,160}
+\definecolor{vlies}{RGB}{236,236,226}
+\definecolor{brotherblau}{RGB}{38,52,110}  % Blau des Maschinenkopfs
+
+\tikzset{
+  % Bauteile der Maschine
+  gehaeuse/.style={fill=black!8, draw=black!75, line width=0.7pt, line join=round},
+  kopf/.style={fill=brotherblau!85, draw=black!80, line width=0.7pt, line join=round},
+  metall/.style={fill=black!30, draw=black!75, line width=0.6pt, line join=round},
+  rahmen/.style={fill=black!22, draw=black!70, line width=0.6pt, line join=round},
+  kunststoff/.style={fill=black!12, draw=black!70, line width=0.6pt, line join=round},
+  stoffstil/.style={fill=stoff, draw=stoffrand, line width=0.5pt, line join=round},
+  vliesstil/.style={fill=vlies, draw=black!45, line width=0.5pt, line join=round},
+  % Faden
+  faden/.style={draw=oberfaden, line width=1.2pt, line cap=round, line join=round},
+  ufaden/.style={draw=black!55, line width=1pt, line cap=round, line join=round},
+  % Pfeile, Maße, Beschriftung
+  bewegung/.style={-{Stealth[length=2.6mm, width=2.2mm]}, line width=1.2pt},
+  drehung/.style={-{Stealth[length=1.8mm, width=1.6mm]}, line width=0.9pt},
+  mass/.style={{Stealth[length=1.4mm]}-{Stealth[length=1.4mm]}, line width=0.4pt, black!80},
+  hilfslinie/.style={line width=0.3pt, black!60},
+  marke/.style={circle, draw=black, fill=white, line width=0.8pt,
+    minimum size=4.4mm, inner sep=0pt, font=\scriptsize\bfseries},
+  leitung/.style={line width=0.5pt, black!80},
+  % Bewertung: \pic at (x,y) {ok}; bzw. {nok}
+  ok/.pic={\fill[okgruen] (0,0) circle (3);
+    \draw[white, line width=1.3pt, line cap=round, line join=round]
+      (-1.4,0.1) -- (-0.4,-1.1) -- (1.5,1.2);},
+  nok/.pic={\fill[nokrot] (0,0) circle (3);
+    \draw[white, line width=1.3pt, line cap=round]
+      (-1.1,-1.1) -- (1.1,1.1) (-1.1,1.1) -- (1.1,-1.1);},
+}
+
+% Feld mit hellem Hintergrund und Überschrift: \feld{x}{y}{Breite}{Höhe}{Titel}
+\newcommand{\feld}[5]{%
+  \fill[feld, rounded corners=2mm] (#1,#2) rectangle ++(#3,#4);
+  \node[anchor=north west, font=\small\bfseries] at (#1+3,#2+#4-2) {#5};}
+
+% Beschriftung mit Linie: \txt[Optionen des Textknotens]{Textposition}{Ziel}{Text}
+\newcommand{\txt}[4][]{\draw[leitung] (#2) -- (#3);
+  \node[#1, font=\scriptsize, fill=white, inner sep=0.8pt, align=center] at (#2) {#4};}

@@ -1,0 +1,44 @@
+% =====================================================================
+%  Spule in der Spulenkapsel: Abwickelrichtung und Fadenführung unter
+%  der Spannungsfeder. Blick auf die offene Seite der Kapsel,
+%  schematisch, nicht maßstäblich. Selbst gezeichnet.
+% =====================================================================
+\begin{tikzpicture}[x=1mm, y=1mm, font=\scriptsize]
+  % Spulenkapsel mit Spule, richtig eingelegt
+  \begin{scope}
+    \draw[metall, fill=black!18] (0,0) circle (14);
+    \draw[metall] (-3,13.5) rectangle (3,20);                % Zunge
+    \draw[metall, fill=black!40] (14.3,6) -- (17,5) -- (18,-9) -- (14.6,-9) -- cycle; % Spannungsfeder
+    \fill[white] (13.4,6.5) -- (15.2,5.8) -- (15.2,4.6) -- (13.6,5.3) -- cycle;      % Fadenschlitz
+    \draw[fill=unterfaden, draw=black!60, line width=0.6pt] (0,0) circle (10.5);
+    \foreach \r in {9,7.5,6} \draw[black!25, line width=0.3pt] (0,0) circle (\r);
+    \draw[metall, fill=black!45] (0,0) circle (3);
+    \draw[fill=white, draw=black!70] (0,0) circle (1.2);
+    \draw[ufaden] (0,10.5) .. controls (7,10.5) and (12,8) .. (14.3,5.6)
+      -- (16.2,-9.5) -- (17,-24);
+    \draw[drehung, okgruen!80!black] (-6.5,-3.5) arc[start angle=210, end angle=60, radius=7.4];
+    \draw[mass] (21,-9.5) -- (21,-24);
+    \node[anchor=west] at (22,-17) {ca. 5\,cm};
+    \pic at (-12,-17) {ok};
+    \node[anchor=north] at (0,-27) {Faden wickelt im Uhrzeigersinn ab};
+  \end{scope}
+  \txt[anchor=east]{-20,20}{-2.5,17}{Zunge}
+  \txt[anchor=south]{30,14}{14.4,6}{Fadenschlitz}
+  \txt[anchor=west]{30,0}{17.4,-1}{unter der Spannungsfeder}
+
+  % falsch: Spule umgedreht
+  \begin{scope}[shift={(78,0)}]
+    \draw[metall, fill=black!18] (0,0) circle (14);
+    \draw[metall] (-3,13.5) rectangle (3,20);
+    \draw[metall, fill=black!40] (14.3,6) -- (17,5) -- (18,-9) -- (14.6,-9) -- cycle;
+    \draw[fill=unterfaden, draw=black!60, line width=0.6pt] (0,0) circle (10.5);
+    \foreach \r in {9,7.5,6} \draw[black!25, line width=0.3pt] (0,0) circle (\r);
+    \draw[metall, fill=black!45] (0,0) circle (3);
+    \draw[fill=white, draw=black!70] (0,0) circle (1.2);
+    \draw[ufaden] (0,-10.5) .. controls (8,-10.5) and (12,-2) .. (14.3,5.6)
+      -- (16.2,-9.5) -- (17,-24);
+    \draw[drehung, nokrot] (6.5,-3.5) arc[start angle=-30, end angle=120, radius=7.4];
+    \pic at (-12,-17) {nok};
+    \node[anchor=north] at (0,-27) {gegen den Uhrzeigersinn: falsch herum};
+  \end{scope}
+\end{tikzpicture}
